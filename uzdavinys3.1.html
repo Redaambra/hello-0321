@@ -1,195 +1,203 @@
 <!DOCTYPE html>
-<meta charset="UTF-8"
-<html>
-    <head>
-            <title>Šachmatų lenta</title>
-            <meta charset="UTF-8">
-            <style>
-                table {
-                    border-collapse:collapse;
-                    border: 0.5px solid black;
-                    border-spacing:0;
-                    table-layout: fixed;
-                    border-color:black; 
-                    color:white;
-                    
-                    
-                }
-                body {
-                    background-color:none;
-                  }
-                   td {
-                    border: 0.5px solid black;
-                   height: 70px;
-                   width: 70px;
-                   font-size: 100%
-                                   }
-                td.stilius2 {
-                    text-align: center;
-                    background-color:rgb(195, 238, 195);
-                    color:black;
-                    
-                    }
-                td.stilius4 {
-                    text-align: center; 
-                    background-color:darkslategray;
-                    color:black; 
-                }
-                td.stilius9 {
-                   text-align: center;
-                   background-color:rgb(4, 24, 15);
-                   transform: rotate(90.0deg);
-                                   }
-                td.stilius19 {
-                   text-align: center;
-                   background-color:rgb(4, 24, 15);
-                   transform: rotate(-90.0deg)
-                }
-                
-                td.stilius49 {
-                   text-align: center;
-                   background-color:rgb(4, 24, 15);
-                   transform: rotate(180.0deg)
-                }
-                td.stilius39 {
-                   text-align: center;
-                   background-color:rgb(4, 24, 15);
-                 
-                }
-              
-              </style>
-    </head>
-    <body>
-            <table>
-            <tr>
-                <td class="stilius39" ></td>
-                <td class="stilius39" id="rotate1" >a</td>
-                <td class="stilius39">b</td>
-                <td class="stilius39">c</td>
-                <td class="stilius39">d</td>
-                <td class="stilius39">e</td>
-                <td class="stilius39">f</td>
-                <td class="stilius39">g</td>
-                <td class="stilius39">h</td>
-                <td class="stilius39"></td>
-            </tr>
-            <tr>
-                <td class="stilius19">8</td>
-                <td class="stilius2">&#9820</td>
-                <td class="stilius4">&#9822</td>
-                <td class="stilius2">&#9821</td>
-                <td class="stilius4">&#9819</td>
-                <td class="stilius2">&#9818</td>
-                <td class="stilius4">&#9821</td>
-                <td class="stilius2">&#9822</td>
-                <td class="stilius4">&#9820</td>
-                <td class="stilius9">8</td>
-                
-            </tr>
-            <tr>
-                <td class="stilius19">7</td>
-                <td class="stilius4">&#9823</td>
-                <td class="stilius2">&#9823</td>
-                <td class="stilius4">&#9823</td>
-                <td class="stilius2">&#9823</td>
-                <td class="stilius4">&#9823</td>
-                <td class="stilius2">&#9823</td>
-                <td class="stilius4">&#9823</td>
-                <td class="stilius2">&#9823</td>
-                <td class="stilius9">7</td>
-                    
-             </tr>
-             <tr>
-                <td class="stilius19">6</td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius9">6</td>
-           </tr>
-                <tr>
-                <td class="stilius19">5</td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius4"></td>
-                <td class="stilius2"></td>
-                <td class="stilius9">5</td>
-                
-            </tr>
-            <tr>
-                    <td class="stilius19">4</td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius9">4</td>
-                    
-            </tr>
-            <tr>
-                    <td class="stilius19">3</td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius4"></td>
-                    <td class="stilius2"></td>
-                    <td class="stilius9">3</td>
-                    
-            </tr>
-            <tr>
-                    <td class="stilius19">2</td>
-                    <td class="stilius2" style="color:white">&#9817</td>
-                    <td class="stilius4" style="color:white">&#9817</td>
-                    <td class="stilius2" style="color:white">&#9817</td>
-                    <td class="stilius4" style="color:white">&#9817</td>
-                    <td class="stilius2" style="color:white">&#9817</td>
-                    <td class="stilius4" style="color:white">&#9817</td>
-                    <td class="stilius2" style="color:white">&#9817</td>
-                    <td class="stilius4" style="color:white">&#9817</td>
-                    <td class="stilius9">2</td>
-                    
-            </tr>
-            <tr>
-                    <td class="stilius19">1</td>
-                    <td class="stilius4" style="color:white">&#9814</td>
-                    <td class="stilius2" style="color:white">&#9816</td>
-                    <td class="stilius4" style="color:white">&#9815</td>
-                    <td class="stilius2" style="color:white">&#9813</td>
-                    <td class="stilius4" style="color:white">&#9812</td>
-                    <td class="stilius2" style="color:white">&#9815</td>
-                    <td class="stilius4" style="color:white">&#9816</td>
-                    <td class="stilius2" style="color:white">&#9814</td>
-                    <td class="stilius9">1</td>
-                    
-            </tr>
-            <tr>
-                    <td class="stilius49"></td>
-                    <td class="stilius49">a</td>
-                    <td class="stilius49">b</td>
-                    <td class="stilius49">c</td>
-                    <td class="stilius49">d</td>
-                    <td class="stilius49">e</td>
-                    <td class="stilius49">f</td>
-                    <td class="stilius49">g</td>
-                    <td class="stilius49">h</td>
-                    <td class="stilius49"></td>
-                            
-                    </tr>
-        </table>
-    </body>
-    
+<meta charset="UTF-8" <html>
+
+<head>
+    <title>Šachmatų lenta</title>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 0.5px solid black;
+            border-spacing: 0;
+            table-layout: fixed;
+            border-color: black;
+            color: white;
+
+
+        }
+
+        body {
+            background-color: none;
+        }
+
+        tr,td {
+            border: 0.5px solid black;
+            height: 90px;
+            width: 90px;
+            font-size-adjust: inherit;
+            font-size: 2em
+        }
+
+        td.stilius2 {
+            text-align: center;
+            background-color: rgb(195, 238, 195);
+            color: black;
+
+        }
+
+        td.stilius4 {
+            text-align: center;
+            background-color: darkslategray;
+            color: black;
+        }
+
+        td.stilius9 {
+            text-align: center;
+            background-color: rgb(4, 24, 15);
+            transform: rotate(90.0deg);
+        }
+
+        td.stilius19 {
+            text-align: center;
+            background-color: rgb(4, 24, 15);
+            transform: rotate(-90.0deg)
+        }
+
+        td.stilius49 {
+            text-align: center;
+            background-color: rgb(4, 24, 15);
+            transform: rotate(180.0deg)
+        }
+
+        td.stilius39 {
+            text-align: center;
+            background-color: rgb(4, 24, 15);
+
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="stilius39"></td>
+            <td class="stilius39" id="rotate1">a</td>
+            <td class="stilius39">b</td>
+            <td class="stilius39">c</td>
+            <td class="stilius39">d</td>
+            <td class="stilius39">e</td>
+            <td class="stilius39">f</td>
+            <td class="stilius39">g</td>
+            <td class="stilius39">h</td>
+            <td class="stilius39"></td>
+        </tr>
+        <tr>
+            <td class="stilius19">8</td>
+            <td class="stilius2">&#9820</td>
+            <td class="stilius4">&#9822</td>
+            <td class="stilius2">&#9821</td>
+            <td class="stilius4">&#9819</td>
+            <td class="stilius2">&#9818</td>
+            <td class="stilius4">&#9821</td>
+            <td class="stilius2">&#9822</td>
+            <td class="stilius4">&#9820</td>
+            <td class="stilius9">8</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">7</td>
+            <td class="stilius4">&#9823</td>
+            <td class="stilius2">&#9823</td>
+            <td class="stilius4">&#9823</td>
+            <td class="stilius2">&#9823</td>
+            <td class="stilius4">&#9823</td>
+            <td class="stilius2">&#9823</td>
+            <td class="stilius4">&#9823</td>
+            <td class="stilius2">&#9823</td>
+            <td class="stilius9">7</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">6</td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius9">6</td>
+        </tr>
+        <tr>
+            <td class="stilius19">5</td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius9">5</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">4</td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius9">4</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">3</td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius4"></td>
+            <td class="stilius2"></td>
+            <td class="stilius9">3</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">2</td>
+            <td class="stilius2" style="color:white">&#9817</td>
+            <td class="stilius4" style="color:white">&#9817</td>
+            <td class="stilius2" style="color:white">&#9817</td>
+            <td class="stilius4" style="color:white">&#9817</td>
+            <td class="stilius2" style="color:white">&#9817</td>
+            <td class="stilius4" style="color:white">&#9817</td>
+            <td class="stilius2" style="color:white">&#9817</td>
+            <td class="stilius4" style="color:white">&#9817</td>
+            <td class="stilius9">2</td>
+
+        </tr>
+        <tr>
+            <td class="stilius19">1</td>
+            <td class="stilius4" style="color:white">&#9814</td>
+            <td class="stilius2" style="color:white">&#9816</td>
+            <td class="stilius4" style="color:white">&#9815</td>
+            <td class="stilius2" style="color:white">&#9813</td>
+            <td class="stilius4" style="color:white">&#9812</td>
+            <td class="stilius2" style="color:white">&#9815</td>
+            <td class="stilius4" style="color:white">&#9816</td>
+            <td class="stilius2" style="color:white">&#9814</td>
+            <td class="stilius9">1</td>
+
+        </tr>
+        <tr>
+            <td class="stilius49"></td>
+            <td class="stilius49">a</td>
+            <td class="stilius49">b</td>
+            <td class="stilius49">c</td>
+            <td class="stilius49">d</td>
+            <td class="stilius49">e</td>
+            <td class="stilius49">f</td>
+            <td class="stilius49">g</td>
+            <td class="stilius49">h</td>
+            <td class="stilius49"></td>
+
+        </tr>
+    </table>
+</body>
+
 </html>
