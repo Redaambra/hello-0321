@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>CSS 04</title>
-		<style>
-			.container {
-				background-color: lightblue;
-				color: red;
-			}
 
-			.container .container {
-				background-color: lightgreen;
-			}
+<head>
+	<title>CSS 04</title>
+	<meta charset="UTF-8">
+	<style>
+				.container {
+			background-color: lightblue;
+			color: red;
+		}
 
-			div + div {
-				color: yellow;
-			}
-		</style>
+		.container .container {
+			background-color: lightgreen;
+		}
 
-	</head>
-	<body>
-        <div class="container">
-		    <div>1 Kažkoks tekstas</div>
-		    <div>2 Kažkoks tekstas</div>
-		    <div>3 Kažkoks tekstas</div>
-		    <div>4 Kažkoks tekstas</div>
-            <div class="container">
-                <div>4.1 Kažkoks tekstas</div>
-                <div>4.2 Kažkoks tekstas</div>
-                <div>4.3 Kažkoks tekstas</div>
-                <div>4.4 Kažkoks tekstas</div>
-            </div>
-            <div>5 Kažkoks tekstas</div>
-        </div>
-	</body>
-</html>   
+		div+div {
+			color: yellow;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">rasyti
+		<div>1 Kažkoks tekstas</div>
+		<div>2 Kažkoks tekstas</div>
+		<div>3 Kažkoks tekstas</div>
+		<div>4 Kažkoks tekstas</div>
+		<div class="container">
+			<div>4.1 Kažkoks tekstas</div>
+			<div>4.2 Kažkoks tekstas</div>
+			<div>4.3 Kažkoks tekstas</div>
+			<div>4.4 Kažkoks tekstas</div>
+		</div>
+		<div>5 Kažkoks tekstas
+			<div>mano tekstas mano mano</div>
+			<div>antras brolis</div>
+		</div>
+		<div>Mano tekstas</div>
+	</div>
+</body>
+
+</html>
