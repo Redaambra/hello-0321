@@ -3,32 +3,45 @@
 
 <head>
     <title>CSS blokai</title>
+    <meta charset="UTF-8">
     <style>
         .container {
             background-color: cornflowerblue;
             margin: 2vw;
             width: 90vw;
-            height: 90vh;
+            height: 62.5vw;
             float: left;
             text-align: right;
             padding: 1%;
-        }
+                    }
 
         .block {
             background-color: blue;
-            height: 20vw;
-            width: 20vw;
-            margin: 2vw
+            height: 25vw;
+            width: 25vw;
+            margin: 0;
+            margin-bottom: 2vw;
+        
+
         }
 
         .strocked {
-            border: 1vw solid black;
-            margin: 2vw;
+            border: 0.5vw solid black;
+                               
         }
+        
         .rectangle{
             background-color: darkmagenta;
             width: 60vw;
-            height: 20vw;
+            height: 25vw;
+            text-align: right;   
+            margin:2vw; 
+            clear: both;
+        }
+        .rectangle.block {background-color: crimson;
+        margin:0;
+        }
+        div.strocked.rectangle {background-color:greenyellow; border:0;
         }
     </style>
 </head>
@@ -39,7 +52,14 @@
         <div class="block">block</div>
         <div class="block">block</div>
     </div>
+   
     <div class="block strocked"></div>
+    <div class="rectangle">
+        <div class="block">block</div>
+            </div>
+    <div class="rectangle strocked">
+      
+    </div>
 
 
 
