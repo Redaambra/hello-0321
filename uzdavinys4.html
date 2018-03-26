@@ -13,7 +13,7 @@
             float: left;
             text-align: right;
             padding: 1%;
-                    }
+        }
 
         .block {
             background-color: blue;
@@ -21,27 +21,30 @@
             width: 25vw;
             margin: 0;
             margin-bottom: 2vw;
-        
-
-        }
+                   }
+        div.block:hover {background-color: honeydew}
 
         .strocked {
             border: 0.5vw solid black;
-                               
-        }
-        
-        .rectangle{
+            margin: 2vw;
+                    }
+
+        .rectangle {
             background-color: darkmagenta;
             width: 60vw;
             height: 25vw;
-            text-align: right;   
-            margin:2vw; 
+            text-align: right;
+            margin: 2vw;
             clear: both;
         }
-        .rectangle.block {background-color: crimson;
-        margin:0;
+
+        div.strocked.rectangle {
+            background-color: greenyellow;
+            border: 0;
         }
-        div.strocked.rectangle {background-color:greenyellow; border:0;
+
+        .rectangle .block {
+            background-color: crimson
         }
     </style>
 </head>
@@ -52,14 +55,14 @@
         <div class="block">block</div>
         <div class="block">block</div>
     </div>
-   
-    <div class="block strocked"></div>
+      
     <div class="rectangle">
         <div class="block">block</div>
-            </div>
-    <div class="rectangle strocked">
-      
     </div>
+    <div class="rectangle strocked">
+
+    </div>
+    <div class="block strocked"></div>
 
 
 
