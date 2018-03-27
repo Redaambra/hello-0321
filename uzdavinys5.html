@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS blokai2</title>
+        <meta charset="UTF-8">
+        <style>
+         body {width: 80%;
+                height: 100vh;
+
+               margin:auto;}   
+        div.header {height: 5em; border:1px solid black; margin: 2px 2px;}
+        div.a {height:calc(80% - 4px); width:calc(75% - 6px); display:inline-block; margin: 1px;background-color: lawngreen}
+        div.b {height:calc(80% - 4px); width:calc(25% - 6px); display:inline-block; margin: 1px;background-color: lawngreen}
+
+        div.vidurys {border:1px solid black; height:calc(100% - 15em)}
+            div.c {background-color: yellow; display: inline-block; height:10em; width:calc(25% - 1em);margin: auto;}
+            div.c2 {display: inline-block;width:calc(50% - 2em); height: 100%;}
+                 div.d {background-color: blue; height:5em; margin:2px; width:100%; }
+                 div.g {background-color: blue; height:calc(100% - 15em);}
+
+            div.c3 {display: inline-block; width: calc(25% - 1em)}
+
+                 div.f {background-color: red; height: 10em; width:100%;margin: 1px;}
+                 div.h {background-color: red; width: 100%; margin: 1px;}
+
+        
+        div.footer {background-color:rgb(53, 247, 237); height: 5em; border:1px solid black; }
+        
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="a"></div>
+            <div class="b"></div>
+        </div>
+        <div class="vidurys">
+            <div class="c">C</div>
+            <div class="c2">
+                <div class="d"></div>
+                <div class="d"></div>
+                <div class="g">G</div>             </div>
+            <div class="c3">
+                <div class="f">F</div>
+                <div class="h">H</div>            </div>
+        </div>
+        <div class="footer"></div>
+   
+    </body>
+</html>

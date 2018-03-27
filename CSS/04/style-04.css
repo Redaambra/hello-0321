@@ -24,8 +24,7 @@ body {
 
 .fixed { 
     background-attachment: fixed; 
+    back
 }
-
 .clear {
-    clear: both;
-}
+    clear:both ;}

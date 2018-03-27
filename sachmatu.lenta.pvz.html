@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sachmatu lenta PVZ</title>
+        <style>
+        #a { 
+    border: 1px solid green; 
+    width: 80vmin;
+    height: 80vmin;
+    margin: auto;
+    min-width: 100px;
+    min-height: 100px;
+  }
+  table { border-collapse: collapse; width: 100%; height: 100%; table-layout: fixed; }
+  td { border: 1px solid black; }
+  tr:first-child, tr:last-child { height: 1em; } 
+  td:first-child, td:last-child { width: 1em; } 
+  tr:nth-child(2) td:not(:first-child):not(:last-child) {
+    font-size: 15vmin;
+    text-align: center;
+    line-height: 0;
+  }
+   tr:nth-child(even) td:nth-child(even) { background-color: lightgrey; }
+  tr:nth-child(odd) td:nth-child(odd):not(:first-child) { background-color: lightgrey; }</style>
+    </head>
+    <body>
+        <div id="a">
+            <table>
+              <tr><td></td><td>A</td><td>B</td><td></td></tr>
+              <tr><td>1</td><td>&#9819;</td><td></td><td>1</td></tr>
+              <tr><td>2</td><td></td><td></td><td>2</td></tr>
+              <tr><td></td><td>A</td><td>B</td><td></td></tr>
+            </table>
+          </div>
+    </body>
+</html>
