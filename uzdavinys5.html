@@ -4,45 +4,37 @@
         <title>CSS blokai2</title>
         <meta charset="UTF-8">
         <style>
-         body {width: 80%;
-                height: 90vh;
+         body {width: 100%;
+                height: 100%;
+                margin:0;}
 
-               margin:auto;}   
-        div.header {height: 5em; border:1px solid black; margin: 1px;}
-        div.a {height:calc(100% - 2px); width:calc(75% - 4px); display:inline-block; margin: 1px;background-color: lawngreen}
-        div.b {height:calc(100% - 2px); width:calc(25% - 4px); display:inline-block; margin: 1px;background-color: lawngreen}
+        div {margin:0.5px}
 
-        div.vidurys {border:1px solid black; height:calc(100% - 10em - 2px); margin:1px;}
-            div.c {background-color: yellow; display: inline-block; height:calc(100% - 4px); width:calc(25% - 1px); margin:1px;margin-bottom: 2px;}
-            div.c2 {display: inline-block;width:calc(50% - 10px); height: 100%;margin:1px;}
-                 div.d {background-color: blue; height:5em; margin:1px; width:calc(100% - 2px); margin:1px; }
-                 div.g {background-color: blue; height:calc(100% - 10em - 5px);}
+        .header {height: 5em;}
+        .a {height:100%; width:calc(75% - 1px); display:inline-block; background-color: lawngreen}
+        .b {height:100%; width:calc(25% - 1px); display:inline-block; background-color: lawngreen}
 
-            div.c3 {display: inline-block; height:calc(100% - 6px); width: calc(25% - 4px); margin:1px;}
+        .vidurys {height:calc(100vh - 10em - 2px);}
+            .kaire {background-color: yellow; display: inline-block; height:calc(100%); width:calc(25% - 2px);}
+            .centras {display: inline-block; width:calc(50%); height: 100%;}
+                 .d {background-color: blue; height:5em;;}
+                 .g {background-color: blue; height:calc(100% - 10em);}
 
-                 div.f {background-color: red; height: 10em; width:calc(100% - 2px);margin: 0;}
-                 div.h {background-color: red; height:calc(100% - 10em - 2px); width:calc(100% - 2px); margin: 1px;}
+        .desine {display: inline-block; height:calc(100%); width: calc(25% - 1px); }
+                 .f {background-color: red; height: 10em;}
+                 .h {background-color: red; height:calc(100% - 10em); vertical-align: bottom}
 
         
-        div.footer {background-color:rgb(53, 247, 237); height: 5em; border:1px solid black; }
+        .footer {background-color:rgb(53, 247, 237); height: 5em; }
         
         </style>
     </head>
     <body>
         <div class="header">
-            <div class="a"></div>
-            <div class="b"></div>
+            <div class="a"></div><div class="b"></div>
         </div>
         <div class="vidurys">
-            <div class="c"></div>
-            <div class="c2">
-                <div class="d"></div>
-                <div class="d"></div>
-                <div class="g"></div>             </div>
-            <div class="c3">
-                <div class="f"></div>
-                <div class="h"></div>            </div>
-        </div>
+            <div class="kaire"></div><div class="centras"><div class="d"></div><div class="d"></div><div class="g"></div></div><div class="desine"><div class="f"></div><div class="h"></div></div></div>
         <div class="footer"></div>
    
     </body>
