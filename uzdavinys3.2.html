@@ -3,28 +3,32 @@
     <title>Šachmatų lenta</title>
     <meta charset="UTF-8">
     <style>
-        table {
+        #a {
             border-collapse: collapse;
-            border: 0.5px solid green;
-            table-layout: fixed;            
-            color: grey;
+            border: 0.5px solid black;  
+            color:black;
             height: 40vmin;
             width: 40vmin;
-            min-width: 200px;
-            min-height: 200px;
+            min-width: 300px;
+            min-height: 300px;
             margin:auto;
-           
-        }  
+            text-align: center;
+                   }  
+        table {border-collapse: collapse;width: 100%; height: 100%;table-layout: fixed;}
+        td {border: 1px solid black}
         tr:first-child, tr:last-child {height: 1em; } 
         td:first-child, td:last-child {width: 1em; }  
-        tr:nth-child(2) td:not(:first-child) :not(:last-child) {
-            font-size: 5vmin;
-            text-align: center;
-            line-height: 150;
+        tr:nth-child(1n+2):not(:last-child) td:not(:first-child) :not(:last-child) {
+            font-size: 15vmin;
+            text-align: left;
+            line-height:0;
         }
-        tr:nth-child(even) 
-      
-      tr, td {border:0.5px solid green}
+        tr:nth-child(even):not(:last-child) td:nth-child(even):not(:last-child) {background-color: khaki}
+        tr:nth-child(odd):not(:last-child):not(:first-child) td:nth-child(odd):not(:first-child) {background-color: khaki}
+        td:first-child {transform: rotate(-90deg)}
+        td:last-child {transform: rotate(90deg)}
+        
+     
 
         
 
@@ -33,125 +37,20 @@
 </head>
 
 <body>
+    <div id="a">
     <table>
         <tr><td></td><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td></td></tr>
-        <tr>
-            <td>8</td>
-            <td>&#9820</td>
-            <td>&#9822</td>
-            <td>&#9821</td>
-            <td>&#9819</td>
-            <td>&#9818</td>
-            <td>&#9821</td>
-            <td>&#9822</td>
-            <td>&#9820</td>
-            <td>8</td>
-
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>&#9823</td>
-            <td>7</td>
-
-        </tr>
-        <tr>
-            <td>6</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>5</td>
-
-        </tr>
-        <tr>
-            <td>4</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>4</td>
-
-        </tr>
-        <tr>
-            <td>3</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>3</td>
-
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>&#9817</td>
-            <td>2</td>
-
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>&#9814</td>
-            <td>&#9816</td>
-            <td>&#9815</td>
-            <td>&#9813</td>
-            <td>&#9812</td>
-            <td>&#9815</td>
-            <td>&#9816</td>
-            <td>&#9814</td>
-            <td>1</td>
-
-        </tr>
-        <tr>
-            <td></td>
-            <td>a</td>
-            <td>b</td>
-            <td>c</td>
-            <td>d</td>
-            <td>e</td>
-            <td>f</td>
-            <td>g</td>
-            <td>h</td>
-            <td></td>
-
-        </tr>
+        <tr><td>8</td><td>&#9820</td><td>&#9822</td><td>&#9821</td><td>&#9819</td><td>&#9818</td><td>&#9821</td><td>&#9822</td><td>&#9820</td><td>8</td></tr>
+        <tr><td>7</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>7</td></tr>
+        <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td></tr>
+        <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5</td></tr>
+        <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td></tr>
+        <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td></tr>
+        <tr><td>2</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>2</td></tr>
+        <tr><td>1</td><td>&#9814</td><td>&#9816</td><td>&#9815</td><td>&#9813</td><td>&#9812</td><td>&#9815</td><td>&#9816</td><td>&#9814</td><td>1</td></tr>
+        <tr><td></td><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td></td></tr>
     </table>
+</div>
 </body>
 
 </html>
