@@ -7,8 +7,8 @@
             border-collapse: collapse;
             border: 0.5px solid black;  
             color:black;
-            height: 40vmin;
-            width: 40vmin;
+            height: 70vmin;
+            width: 70vmin;
             min-width: 300px;
             min-height: 300px;
             margin:auto;
@@ -18,15 +18,20 @@
         td {border: 1px solid black}
         tr:first-child, tr:last-child {height: 1em; } 
         td:first-child, td:last-child {width: 1em; }  
-        tr:nth-child(1n+2):not(:last-child) td:not(:first-child) :not(:last-child) {
-            font-size: 15vmin;
-            text-align: left;
-            line-height:0;
-        }
+        
         tr:nth-child(even):not(:last-child) td:nth-child(even):not(:last-child) {background-color: khaki}
         tr:nth-child(odd):not(:last-child):not(:first-child) td:nth-child(odd):not(:first-child) {background-color: khaki}
+       
+        tr:nth-child(1n+2):not(:last-child) td:not(:first-child):not(:last-child) {
+            font-size: 5vmin;
+            font-size-adjust: inherit
+            text-align: center;
+            line-height:0;
+        }
         td:first-child {transform: rotate(-90deg)}
         td:last-child {transform: rotate(90deg)}
+        tr:last-child {transform: rotate(180deg)}
+        tr:nth-child(1n+8):not(:last-child) td:not(:first-child):not(:last-child) {color:lightskyblue}
         
      
 
@@ -46,9 +51,9 @@
         <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5</td></tr>
         <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4</td></tr>
         <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3</td></tr>
-        <tr><td>2</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>&#9817</td><td>2</td></tr>
-        <tr><td>1</td><td>&#9814</td><td>&#9816</td><td>&#9815</td><td>&#9813</td><td>&#9812</td><td>&#9815</td><td>&#9816</td><td>&#9814</td><td>1</td></tr>
-        <tr><td></td><td>a</td><td>b</td><td>c</td><td>d</td><td>e</td><td>f</td><td>g</td><td>h</td><td></td></tr>
+        <tr><td>2</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>&#9823</td><td>2</td></tr>
+        <tr><td>1</td><td>&#9820</td><td>&#9822</td><td>&#9821</td><td>&#9819</td><td>&#9818</td><td>&#9821</td><td>&#9822</td><td>&#9820</td><td>1</td></tr>
+        <tr><td></td><td>h</td><td>g</td><td>f</td><td>e</td><td>d</td><td>c</td><td>b</td><td>a</td><td></td></tr>
     </table>
 </div>
 </body>
