@@ -2,10 +2,23 @@
 <html>
     <head>
         <title>3 apskritimai</title>
-        <style></style>
+        <style>
+            p {text-justify:newspaper;}
+            .kvadratas {position: relative; background-color: lightgrey; border: 0.5px solid black; width: 50vw; height:             50vw;margin: 0 auto;}
+            .raudonas { display: table; color:white; text-align:center; font-size:5vw; position:absolute; right:20%; top:3%; background-color:rgba(255,0,0,0.3); width: calc(60% - 20px); height: calc(60% - 20px); border: 10px solid red; border-radius: 50%;}
+            .melynas {display: table; color:white; text-align:center; font-size:5vw; position:absolute; bottom:2%; right:3%;  background-color: rgba(0, 0, 255, 0.3);width: calc(60% - 20px); height: calc(60% - 20px); border: 10px solid blue; border-radius: 50%;}
+            .zalias {display: table; color:white; text-align:center; font-size:5vw; position:absolute; bottom:2%; left:3%;   background-color: rgba(0, 255, 0, 0.3);;width: calc(60% - 20px); height: calc(60% - 20px); border: 10px solid green; border-radius: 50%;}
+            .R {display: table-cell; vertical-align: middle; text-align: center; }
+        </style>
     </head>
     <body>
-        <p>paragrafas kazkoks</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor magna, feugiat ac risus ac, semper blandit lacus. Proin bibendum tempor sodales. Cras tempus ac arcu vel placerat. Phasellus fringilla nec lacus sit amet laoreet. Nulla eget molestie mauris. Nullam faucibus at sapien scelerisque tincidunt. Fusce quis metus ut diam convallis lacinia id sed purus. Quisque quis turpis varius, tristique nisl in, hendrerit nisi. In tempus sagittis lacus, at molestie diam consequat sit amet. Vestibulum non finibus tortor, quis ultricies erat. Nam laoreet, leo non vulputate rhoncus, nibh risus bibendum sem, iaculis ultrices sem enim ut libero. </p>
+        <div class="kvadratas">
+            <div class="raudonas"><div class="R">R</div></div>
+            <div class="zalias"><div class="R">G</div></div>
+            <div class="melynas"><div class="R">B</div></div>
+            
+        </div>
         
     </body>
 </html>
