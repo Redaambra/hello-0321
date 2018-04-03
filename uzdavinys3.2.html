@@ -22,15 +22,17 @@
         tr:nth-child(even):not(:last-child) td:nth-child(even):not(:last-child) {background-color: khaki}
         tr:nth-child(odd):not(:last-child):not(:first-child) td:nth-child(odd):not(:first-child) {background-color: khaki}
        
+       tr:nth-child(even):not(:last-child) td:nth-child(odd):not(:first-child) {background-color:tan;}
+       tr:nth-child(odd):not(:first-child) td:nth-child(even):not(:last-child) {background-color:tan;}
         tr:nth-child(1n+2):not(:last-child) td:not(:first-child):not(:last-child) {
-            font-size: 5vmin;
+            font-size: 10vmin;
             text-align: center;
             line-height:0;
         }
         td:first-child {transform: rotate(-90deg)}
         td:last-child {transform: rotate(90deg)}
         tr:last-child {transform: rotate(180deg)}
-        tr:nth-child(1n+8):not(:last-child) td:not(:first-child):not(:last-child) {color:lightskyblue}
+        tr:nth-child(1n+8):not(:last-child) td:not(:first-child):not(:last-child) {color:white}
         
      
 
