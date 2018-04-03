@@ -7,20 +7,20 @@
     <style>
         .container {
             background-color: cornflowerblue;
-            margin: 2vw;
-            width: 90vw;
+            margin: 5px;
+            width: calc(100vw - 10px);
             height: 62.5vw;
-            float: left;
+            font-size: 1vw;
             text-align: right;
-            padding: 1%;
+            padding: 0;
         }
 
         .block {
             background-color: blue;
             height: 25vw;
             width: 25vw;
-            margin: 0;
-            margin-bottom: 2vw;
+            margin: 5px;
+            
         }
 
         div.block:hover {
@@ -28,9 +28,9 @@
         }
 
         .strocked {
-            border: 0.5vw solid black;
-            margin: 2vw;
-            clear: both;
+            border: 8px solid black;
+            margin: 5px;
+            
         }
 
         .rectangle {
@@ -38,31 +38,32 @@
             width: 60vw;
             height: 25vw;
             text-align: right;
-            margin: 2vw;
-            clear: both;
+            margin: 5px;
+            
         }
 
         div.strocked.rectangle {
-            background-color: greenyellow;
-            border: 0;
+            background-color: greenyellow; border:0;
+           
         }
 
         .rectangle .block {
-            background-color: crimson
+            background-color: crimson; margin:0;
         }
+        .strocked.block {width:calc(25vw - 16px);}
     </style>
 </head>
 
 <body>
 
-    <div class="container"> container
-        <div class="block">block</div>
-        <div class="block">block</div>
+    <div class="container"> 
+        <div class="block"></div>
+        <div class="block"></div>
     </div>
     <div class="block strocked"></div>
 
     <div class="rectangle">
-        <div class="block">block</div>
+        <div class="block"></div>
     </div>
     <div class="rectangle strocked">
     </div>
