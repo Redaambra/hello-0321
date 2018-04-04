@@ -1,10 +1,13 @@
 .a {
     transform: translate(4em, 0.5em);
     color: red;
+    border:1px solid black;
+    width: 20vw;
 }
 
 span {
     display: block;
     transform: translateY(1em);
     color: green;
+    border:1px solid black;
 }

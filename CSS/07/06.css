@@ -30,8 +30,8 @@
 
 .a {
     animation: sukimas 3s;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-    animation-delay: 2s;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: 4;
+    animation-delay: 3s;
     animation-fill-mode: backwards;
 }
