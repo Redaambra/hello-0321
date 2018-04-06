@@ -3,63 +3,68 @@
     <head>
         <title>Flex blokai</title>
         <style>
-            body {background-color: black;
+            body {
             margin:0;
             padding:0;}
-            .container {
-                margin:0; 
-                padding: 0; 
+            div.container {
                 background-color:lightgrey;
-                width: 100vw;
+                width: 95vw;
                 height: 100vh;
                 display: flex;
-                flex-direction:column;
-                align-items: stretch;
-                }
-            
-            div {margin: 0;
+                flex-direction:column; }
+            div {
                 padding: 0;
-                overflow: auto;
-                }
-
-            .a {height:10vh;
+                overflow: auto;  }
+            .a {
+                height:10vh;
                 display: flex;
-                flex-direction: row;
-                }  
-            .a > div {margin:2px;}
+                flex-direction: row;}  
             .a1 {
-                padding: 1px;
-                flex-grow:1;
-                background-color: lightskyblue;}
-            .a2 {flex: 0 0 25%;
-                 background-color: lightskyblue;
-                 padding: 1px;}
-
-            .b {display:flex;
+                flex:1;
+                background-color: lightskyblue;
+                margin:2px 1px 1px 2px;}
+            .a2 {
+                flex: 0 0 25vw;
+                 background-color: lightskyblue; 
+                 margin: 2px 2px 1px 1px;}
+            .b {
+                display:flex;
                 flex: 1;
-                flex-direction: row;
-                justify-content:space-between;}
+                flex-direction: row; }
+            .b1 {
+                flex:0 0 20vw;
+                background-color:gold;
+                margin: 1px 1px 1px 2px;}
+            .b2 {
+                flex:1;
+                display:flex;
+                flex-direction: column;
+                }
+            .b2a {
+                flex: 0 0 20%;
+                margin: 1px 1px 1px 1px;}
+            .b2c {
+                flex-grow:1;
+                margin:1px;}
+            .b2 > div {
+                background-color:royalblue;}
+            .b3 {
+                flex:0 0 25vw;
+                display:flex;
+                flex-direction:column;
+                margin:0;}
+            .b3 > div {
+                background-color:firebrick; 
+                margin: 1px 2px 1px 1px;  }
+            .b3a {
+                flex:0 0 20%;}
+            .b3b {
+                flex-grow:1;}
             
-            .b1 {flex:0 0 20%;
-                background-color:gold;}
-            .b2 {flex-grow: 1;
-                display:flex;
-                flex-direction: column;}
-            .b3 {flex:0 0 25%;
-                display:flex;
-                flex-direction:column;}
-            .b2a {flex: 0 0 20%;}
-            .b2c {flex-grow:1;}
-            .b2 > div {background-color:royalblue;}
-            .b3a {flex:0 0 20%; border: 0.5px solid black;margin: 2px;}
-            .b3b {flex-grow:1;}
             .c {background-color: lightpink;
                 height: 10vh;
-                margin: 2px;}
-           
-            .b1 > div {margin: 2px;}
-            .b2 > div {margin:2px;}
-            .b3 > div {background-color:firebrick; margin:2px;}
+                margin: 2px 1px; }   
+            
             </style>
     </head>
     <body>
