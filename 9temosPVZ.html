@@ -1,68 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>9temos pavyzdys</title>
-    <style>
-        
-#a { 
-  display: flex; 
-  flex-direction: column;
-}
-.adv {
-  background-color: lightblue;
-  width: 200px; height: 100px;
-  border: 1px solid;
-  flex: 0 0 200px;
-  margin: 10px;
-}
-#b {
-  display: flex;
-  flex: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 0 10px;
-  background-color:lightgreen;
-}
 
-ul {
-  display: flex;
-  padding: 0;
-}
-li {
-  list-style-type: none;
-}
-.fill {
-  flex-grow: 1;
-}
-.c {overflow:scroll;}
+<head>
+  <title>9temos pavyzdys</title>
+  <style>
+    #a {
+      display: flex;
+      flex-direction: column;
+    }
 
-@media(min-width:767px){
- .c {display:flex; flex-direction:row; background-color:lightskyblue;}
-.content {flex-grow:1;}
-#b {flex:0 0}
-.c {overflow:scroll; flex-shrink:1;}}
+    .adv {
+      background-color: lightblue;
+      width: 200px;
+      height: 100px;
+      border: 1px solid;
+      flex: 0 0 200px;
+      margin: 10px;
+    }
 
-    </style>
-    </head>
-    <body>
-            <div id="a">
-                    <div id="header">
-                      <ul>
-                        <li>Pirmas</li>
-                        <li class="fill"></li>
-                        <li id="m2">Antras</li>
-                      </ul>
-                    </div>  
-                    <div class="c">
-                    <div class="content">Article jbkljhl.jh knjkb;kjb;k jn;jb;</div>
-                    <div id="b">
-                      <div class="adv">Aaaaaa</div>
-                      <div class="adv">Bbbbbb</div>
-                      <div class="adv">Cccccc</div>
-                      <div class="adv">Dddddd</div>
-                    </div>
-                    </div>
-                    <div id="footer">Footer</div>
-                  </div>
-    </body>
+    #b {
+      display: flex;
+      flex: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 0 10px;
+      background-color: lightgreen;
+    }
+
+    ul {
+      display: flex;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    .fill {
+      flex-grow: 1;
+    }
+
+    .c {
+      overflow: scroll;
+    }
+
+    @media(min-width:767px) {
+      .c {
+        display: flex;
+        flex-direction: row;
+        background-color: lightskyblue;
+      }
+      .content {
+        flex-grow: 1;
+      }
+      #b {
+        flex: 0 0
+      }
+      .c {
+        overflow: scroll;
+        flex-shrink: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="a">
+    <div id="header">
+      <ul>
+        <li>Pirmas</li>
+        <li class="fill"></li>
+        <li id="m2">Antras</li>
+      </ul>
+    </div>
+    <div class="c">
+      <div class="content">Article jbkljhl.jh knjkb;kjb;k jn;jb;</div>
+      <div id="b">
+        <div class="adv">Aaaaaa</div>
+        <div class="adv">Bbbbbb</div>
+        <div class="adv">Cccccc</div>
+        <div class="adv">Dddddd</div>
+      </div>
+    </div>
+    <div id="footer">Footer</div>
+  </div>
+</body>
+
 </html>
