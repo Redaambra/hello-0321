@@ -1,6 +1,6 @@
 .h {
   display: flex;
-  align-items: center;
+  justify-items: center;
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
   height: 10vh;
-  width: 130px;
+  width: 120px;
 }
 
 .meniu {
@@ -32,16 +32,43 @@
   justify-content: space-between;
   width: 50vw;
   align-items: center;
-  color: cadetblue;
+  color: c cadetblue;
 }
 
 .container {
   border: 0.5px solid grey;
-  width: 50vmax;
+  width: 40vmax;
   margin: 10vh auto;
+  padding: 15px;
 }
 
 a {
   margin: 5px;
+  color: cadetblue;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: cadetblue;
+  color: white;
+  border: none;
+}
+
+.awesome {
+  background-color: cadetblue;
+  width: 100vw;
+  height: 100px;
+}
+
+.footer {
+  display: flex;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  position: fixed;
+  bottom: 0;
 }
 /*# sourceMappingURL=9uzdavinysAppStrap.css.map */
