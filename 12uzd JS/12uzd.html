@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript'ass</title>
+</head>
+
+<body>
+
+    <h2>12 užduotis</h2>
+    <div>
+        <span>Stačiakampio plotas</span>
+        <span id="demo"></span>
+    </div>
+    <div>
+        <span>Stačiakampio perimetras</span>
+        <span id="demo2"></span>
+    </div>
+    <div>
+        <span>Stačiakampio įstrižainė</span>
+        <span id="demo3"></span>
+    </div>
+   
+    <script>
+        var ilgis = 5, plotis = 8;
+        var plotas = ilgis * plotis;
+        var perimetras = 2 * (ilgis + plotis)
+        var istrizaine = Math.sqrt((ilgis * ilgis) + (plotis * plotis));
+        document.getElementById("demo").innerHTML = plotas;
+        document.getElementById("demo2").innerHTML = perimetras;
+        document.getElementById("demo3").innerHTML = istrizaine;
+    </script>
+</body>
+
+</html>

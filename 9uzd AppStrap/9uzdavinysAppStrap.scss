@@ -1,6 +1,6 @@
 $spalva1: cadetblue; 
 .kunas {display:flex; flex-direction: column;}
-.h {display:flex; justify-items: center; height:10vh;display:flex; justify-content: space-between; border-bottom: 1px solid $spalva1;}
+.h {display:flex; justify-self: stretch; justify-items:center; height: 10vh; display:flex; justify-content: space-between; border-bottom: 1px solid $spalva1;}
 .logo {align-self: center; background-image: url(a.jpg); background-size: 100%; background-repeat: no-repeat; height:10vh; width:120px; }
 .meniu {font-size:1em; font-weight: 700; margin:8px; color:grey;}
 .namas {font-size: 2em}
@@ -8,8 +8,16 @@ $spalva1: cadetblue;
 .container {border: 0.5px solid grey; width:40vmax;margin:10vh auto; padding:15px;}
 a {margin:5px; color:$spalva1;}
 h3 {font-weight: 700;}
-.btn-primary {background-color: $spalva1; color:white; border:none;}
-.awesome {background-color: $spalva1; width:100vw; height:200px;}
-.footer {display:flex; flex-direction:row; background-color: black;}
-.f1 { width:500px; height:500px; border:1px solid red;}
-.span1 {color: white; font-weight: 800; margin:10px;}
+.mgt1 {background-color: $spalva1; color:white; border:none;}
+.awesome {background-color: $spalva1; display:flex; flex-direction: row; justify-content: space-between; justify-self: stretch;}
+.footer {display:flex; flex-direction:row;}
+.f1 { width:200px; height:200px; border:1px solid red;}
+.span1 {color: white; font-weight: 700; margin:10px;}
+$tamsi1: darken($spalva1,25%);
+.span2 {color:$tamsi1; font-weight: 700;}
+.span3 {color:white; font-weight: 600;}
+.span4 {color:$tamsi1;}
+.mgt2 {background-color: $tamsi1; border-color:$tamsi1; border-radius:1em;}
+.awesome2 {align-self: center;}
+.awesomex {flex:1;}
+@media(max-width:768px) {.awesome {flex-direction: column;}}
