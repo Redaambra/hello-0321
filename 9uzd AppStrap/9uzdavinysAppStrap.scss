@@ -10,7 +10,7 @@ a {margin:5px; color:$spalva1;}
 h3 {font-weight: 700;}
 .mgt1 {background-color: $spalva1; color:white; border:none;}
 .awesome {background-color: $spalva1; display:flex; flex-direction: row; justify-content: space-between; justify-self: stretch;}
-.footer {display:flex; flex-direction:row;}
+.apacia {display:flex; flex-direction:row;}
 .f1 { width:200px; height:200px; border:1px solid red;}
 .span1 {color: white; font-weight: 700; margin:10px;}
 $tamsi1: darken($spalva1,25%);
@@ -21,3 +21,4 @@ $tamsi1: darken($spalva1,25%);
 .awesome2 {align-self: center;}
 .awesomex {flex:1;}
 @media(max-width:768px) {.awesome {flex-direction: column;}}
+.footer {display:flex; flex-direction: column;}
