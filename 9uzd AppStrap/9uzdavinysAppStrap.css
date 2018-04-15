@@ -71,7 +71,7 @@ h3 {
   justify-self: stretch;
 }
 
-.footer {
+.apacia {
   display: flex;
   flex-direction: row;
 }
@@ -120,5 +120,10 @@ h3 {
   .awesome {
     flex-direction: column;
   }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
 }
 /*# sourceMappingURL=9uzdavinysAppStrap.css.map */

@@ -1,0 +1,131 @@
+#virsus {
+  border-bottom: 1px solid cadetblue;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo {
+  background-image: url(a.jpg);
+  background-repeat: no-repeat;
+  width: 200px;
+  background-size: contain;
+}
+
+#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  display: inline-block;
+}
+
+#virsaus_desine {
+  align-self: center;
+  display: flex;
+}
+
+.cont {
+  border: 0.5px solid grey;
+  width: 40vmax;
+  margin: 10vh auto;
+  padding: 15px;
+}
+
+.mgt1 {
+  background-color: cadetblue;
+  border-color: cadetblue;
+}
+
+#apacia {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.span1 {
+  color: white;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.span2 {
+  color: #304f50;
+  font-weight: 700;
+}
+
+.span3 {
+  color: white;
+  font-weight: 600;
+}
+
+.span4 {
+  color: #304f50;
+}
+
+#awesome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#awesome2 {
+  align-self: center;
+}
+
+#pirma_juosta {
+  display: flex;
+  justify-content: space-between;
+  background-color: cadetblue;
+  padding: 5px;
+}
+
+.mgt2 {
+  background-color: #304f50;
+  border-color: #304f50;
+  border-radius: 1em;
+  margin-right: 4rem;
+}
+
+#antra_juosta {
+  background-color: black;
+  opacity: 0.8;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.f1 {
+  width: 300px;
+  height: 150px;
+  color: white;
+  padding: 3px;
+}
+
+.kontaktai {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.kontaktai2 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: cadetblue;
+}
+
+@media (max-width: 768px) {
+  #antra_juosta {
+    flex-direction: column;
+  }
+  #pirma_juosta {
+    flex-direction: column;
+  }
+}
+/*# sourceMappingURL=9uzdavinys2.css.map */
