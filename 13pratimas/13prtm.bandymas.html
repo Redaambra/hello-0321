@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <span>
+                <b>Salyga:</b>
+            </span>
+            <span id="demonas"></span>
+        </div>
+    
+        <p>Paspausk ir sužinok trikampio duomenis</p>
+        <button onclick="nauja()">Spausk</button>
+    
+        
+    <script>
+            function nauja() {
+            var hour = new Date().getHours();
+            var atsakymas;
+            if (hour < 18) {
+                atsakymas = "Dabar diena";
+            } else {
+                atsakymas = "Dabar vakaras";
+            }
+            document.getElementById("demonas").innerHTML = atsakymas;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trikampiu duomenys</title>
+</head>
+
+<body>
+    <h2>13 pratimas</h2>
+
+    <div>
+        <span><b>Trikampio plotas:</b></span>
+        <span id="demo"></span>
+    </div>
+    <div>
+        <span><b>Trikampio pusperimetris:</b></span>
+        <span id="demo2"></span>
+    </div>
+    <div>
+        <span>
+            <b>Trikampio tipas:</b>
+        </span>
+        <span id="demo3"></span>
+    </div>
+
+    <p>Paspausk ir sužinok trikampio duomenis</p>
+    <button onclick="myFunction()">Skaiciuok</button>
+    <br>
+    <br>
+    <div>
+
+
+    <script>
+        function myFunction() {
+            var a = 8, b = 2, c = 10;
+            var p = (a + b + c) / 2;
+            var S = Math.sqrt((p * (p - a) * (p - b) * (p - c)));
+            var atsakymas;
+            document.getElementById("demo").innerHTML = S;
+            document.getElementById("demo2").innerHTML = p;
+            if (a == b && b == c) { atsakymas = "lygiakrastis"; }
+            else if (a == b || b == c || a == c) { atsakymas = "lygiasonis"; }
+            else if (c == Math.sqrt(a * a + b * b) || a == Math.sqrt(b * b + c * c) || b == Math.sqrt(a * a + c * c)) { atsakymas = "status"; }
+            else if (S == 0 || S == "NaN") { atsakymas = "išvis ne trikampis" }
+            document.getElementById("demo3").innerHTML = atsakymas;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
