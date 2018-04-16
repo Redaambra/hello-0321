@@ -43,12 +43,17 @@ $tamsi1: darken($spalva1,25%);
 #pirma_juosta {display: flex; justify-content: space-between; background-color: $spalva1; padding: 5px;;}
 .mgt2 {background-color: $tamsi1; border-color:$tamsi1; border-radius:1em; margin-right: 4rem;}
 #antra_juosta {background-color: black; opacity: 0.8; padding: 2rem; display: flex; flex-direction: row; justify-content: space-between;}
-.f1 { width:300px; height:150px; color:white; padding:3px;}
+.f1 { width:200px; height:150px; color:white; padding:3px; flex:1;}
 .kontaktai {font-weight: 800; font-size: 2rem}
 .kontaktai2 {font-size: 1.5rem;}
 a {color:$spalva1;}
-
+.menu2 {display:none; }
+.m {margin:8px;}
+.inline {display: inline-block;}
+span {display: inline-block;}
 @media (max-width:768px) {
-    #antra_juosta {flex-direction: column;}
-    #pirma_juosta {flex-direction: column;}
+    #antra_juosta {flex-direction: column; justify-content: center;}
+    #pirma_juosta {flex-direction: column; justify-content: center;}
+    li {display:none;}
+    .menu2 {display:inline-block;}
 }

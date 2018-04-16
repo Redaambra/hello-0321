@@ -101,7 +101,7 @@ li {
 }
 
 .f1 {
-  width: 300px;
+  width: 200px;
   height: 150px;
   color: white;
   padding: 3px;
@@ -120,12 +120,28 @@ a {
   color: cadetblue;
 }
 
+.menu2 {
+  display: none;
+}
+
+.m {
+  margin: 8px;
+}
+
 @media (max-width: 768px) {
   #antra_juosta {
     flex-direction: column;
+    justify-content: center;
   }
   #pirma_juosta {
     flex-direction: column;
+    justify-content: center;
+  }
+  li {
+    display: none;
+  }
+  .menu2 {
+    display: inline-block;
   }
 }
 /*# sourceMappingURL=9uzdavinys2.css.map */
