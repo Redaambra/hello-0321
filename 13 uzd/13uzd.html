@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automobilio greitis</title>
+    <style>
+    th {width:200px; border: 1px solid black;}
+    table {margin: 10px auto; border: 1px solid black; border-collapse: collapse; }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Automobilio nr</th>
+            <th>Atstumas</th>
+            <th>Laikas</th>
+            <th>Greitis</th>
+        </tr>
+        <tr>
+            <th id="data"></th>
+            <th id="nr"></th>
+            <th id="at"></th>
+            <th id="laikas"></th>
+            <th id="greitis"></th>
+        </tr>
+    </table>
+    
+
+    <script>
+        var m = ["2017-07-06 19:59:45", "LRS123", 5000, 118]
+        var greitis = (m[2]/1000)/(m[3]/3600)
+        document.getElementById("data").innerHTML = m[0];
+        document.getElementById("nr").innerHTML = m[1];
+        document.getElementById("at").innerHTML = m[2];
+        document.getElementById("laikas").innerHTML = m[3];
+        document.getElementById("greitis").innerHTML = Math.round(greitis);
+    </script>
+</body>
+</html>
