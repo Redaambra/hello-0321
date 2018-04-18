@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+    
+</head>
+<body>
+    <h1>Lentele</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Data</td>
+                <td>Numeris</td>
+                <td>Atstumas</td>
+                <td>Laikas</td>
+                <td>Greitis</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var autos = [
+            ['2018-01-01', 'FFF023', 5000, 100], 
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 0],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-03', 'AAA123', 5000, 101]
+        ];
+        var tekstas = '';
+        for (i = 0; i < autos.length; i++) {
+            if (!autos[i][3]) {
+                continue;
+            }
+            tekstas += '<tr>';
+
+            for (j = 0; j < autos[i].length; j++) {
+                tekstas += stulpelis(autos[i][j]); 
+            }   
+
+            tekstas += stulpelis(autos[i][2] / autos[i][3] * 3.6) + '</tr>';
+        }
+        document.querySelector('tbody').innerHTML = tekstas;
+
+        function stulpelis(reiksme) {
+            var td = '<td>' + reiksme + '</td>';
+            return td;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Masyvu masyvai</title>
+    <style>
+    table {border:1px solid black; border-collapse: collapse;}
+    td {border: 1px solid black;}
+    </style>
+    <script></script>
+</head>
+<body>
+        <h1>Lentele</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td>Numeris</td>
+                    <td>Atstumas</td>
+                    <td>Laikas</td>
+                    <td>Greitis</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div></div>
+        <script>
+        var auto = [['2018-05-18', 'kkk111', 5000, 118], ['2018-02-16', 'jjj123', 4500, 120], ['2016-05-18', 'kkk597', 5200, 100]];
+        var tekstas = '';
+        for (i = 0; i <auto.length; i++) {
+            tekstas += 
+            '<tr>' + 
+            '<td>' + auto[i][0] + '</td>' +
+            '<td>' + auto[i][1] + '</td>' +
+            '<td>' + auto[i][2] + '</td>' +
+            '<td>' + auto[i][3] + '</td>' +
+            '<td>' + Math.round(auto[i][2] / auto[i][3] * 3.6)  + '</td>' +
+             '</tr>';
+        }
+        document.querySelector('tbody').innerHTML = tekstas;
+        document.querySelector('div').innerHTML = auto[1]
+        
+           
+        </script>
+    
+
+
+</body>
+</html>
