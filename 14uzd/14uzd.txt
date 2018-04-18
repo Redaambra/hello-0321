@@ -1,0 +1,29 @@
+Turime masyvą, kurio kiekvienas elementas yra masyvas iš keturių elementų:
+a) data kaip tekstinė eilutė, pvz: ‘2017-07-06 19:59:45’
+b) automobilio numeris, pvz.: ‘LRS123’
+c) automobilio nuvažiuotas kelias metrais
+d) automobilio sugaištas laikas sekundėmis
+Išveskite visus automobilius į html lentelę kartu su suskaičiuotu automobilio greičiu
+kilometrais per valandą.
+
+
+   <table>
+        <thead>
+            <tr>
+                <td>Data</td>
+                <td>Auto nr.</td>
+                <td>Atstumas, m</td>
+                <td>Laikas, s</td>
+                <td>Greitis, km/h</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>

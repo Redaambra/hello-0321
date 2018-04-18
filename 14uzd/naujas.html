@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    tr, td {border: 1px solid black; width:100px;}
+    table {border: 1px solid black; border-collapse: collapse;}
+    </style>
+</head>
+<body>
+    <p id="a1">a1</p>
+    <p id="a2">a2</p>
+    <table id="a3">a3
+        <thead>
+        <tr>
+            <th>data</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="tr1"></tr>
+        <tr id="tr2"></tr>
+        <tr id="tr3"></tr>
+        <tr id="tr4"></tr>
+        <tr id="tr5"></tr>
+
+    </tbody>
+    </table>
+
+    <script>
+    var m, eilute, eilute2, i, k;
+    m = [["2018-04-10", "KKK111", 5000, 118], ["2018-04-11", "LLL222", 4000, 120], ["2018-04-12", "GGG123", 5000, 100], ["2018-04-13", "POP479", 3000, 100]];
+    document.getElementById("a1").innerHTML = m[0][2] + m[1][2]
+    eilute = document.querySelector("#tr1");
+    for (i = 0, k = 0; i < m.length; i++) {
+         eilute += "<td>" + m[k][i] + "</td>";
+    
+    }
+    eilute2 += "</tr>";
+    k++;
+    eilute2 = document.querySelector("#tr2");
+    for (i = 0, k = 0; i < m.length; i++) {
+         eilute2 += "<td>" + m[k][i] + "</td>";
+    
+    }
+    eilute2 += "</tr>";
+    k++;
+
+   
+    document.getElementById("a3").innerHTML = eilute;
+    document.getElementById("a3").innerHTML = eilute;
+    </script>
+</body>
+</html>
