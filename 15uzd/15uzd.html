@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto ivedimo laukai</title>
+    <style>
+    table {border: 1px solid black; border-collapse: collapse;}
+    th, td, tr {border: 1px solid black; width: 100px;}
+    .laukas {width: 300px; border: 1px solid black; height: 20px;}
+    input {float:right; background-color:lightgrey; height: 15px; width:200px;}
+    </style>
+</head>
+<body>
+    <h3>Automobiliu duomenu suvedimo langas</h3>
+<form id="forma">
+   <div class="laukas">Data<input type="date" id="data" value=""></div>
+   <div class="laukas">Auto nr.<input type="text" id="numeris" value=""></div>
+   <div class="laukas">Atstumas, m<input type="number" id="atstumas" value=""></div>
+   <div class="laukas">Laikas, s<input type="number" id="laikas" value=""></div>
+</form>
+    <p>Pauspausti ivesti</p>
+
+    <button onclick="mano_funkcija()">Saugoti</button>
+
+<p id="demo"></p>
+<table>
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Auto nr.</th>
+            <th>Atstumas, s</th>
+            <th>Laikas, m</th>
+            <th>Greitis, km/h</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+</table>
+
+<script>
+function mano_funkcija() {
+    var a = document.getElementById("data").value;
+    var b = document.getElementById('numeris').value;
+    var c = document.getElementById('atstumas').value;
+    var d = document.getElementById('laikas').value;
+    var e = Math.round(c / d *3.6);
+    var eilute = '';
+    eilute = '<tr>' + '<td>' + a + '</td>' + '<td>' + b + '</td>' + '<td>' + c + '</td>' + '<td>' + d + '</td>' + '<td>' + e + '</td>' + '</tr>';
+    document.querySelector('tbody').innerHTML = eilute;
+    document.getElementById("forma").reset();
+}
+
+</script>
+        
+
+    
+</body>
+</html>
