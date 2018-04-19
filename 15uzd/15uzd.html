@@ -22,9 +22,11 @@
 </form>
     <p>Pauspausti ivesti</p>
 
-    <button onclick="mano_funkcija()">Saugoti</button>
+    <button onclick="mano_funkcija(), nauja_funkcija()">Saugoti</button>
+    <p id="demo"></p>
 
-<p id="demo"></p>
+>
+
 <table>
     <thead>
         <tr>
@@ -36,24 +38,43 @@
         </tr>
     </thead>
     <tbody>
-
     </tbody>
+    
 
 </table>
 
+
 <script>
+    var m = [[1,2,3,4,5], [5, 6, 7, 8, 9]]
+    document.getElementById("demo2").innerHTML = m[0]
 function mano_funkcija() {
     var a = document.getElementById("data").value;
     var b = document.getElementById('numeris').value;
     var c = document.getElementById('atstumas').value;
     var d = document.getElementById('laikas').value;
     var e = Math.round(c / d *3.6);
-    var eilute = '';
-    eilute = '<tr>' + '<td>' + a + '</td>' + '<td>' + b + '</td>' + '<td>' + c + '</td>' + '<td>' + d + '</td>' + '<td>' + e + '</td>' + '</tr>';
-    document.querySelector('tbody').innerHTML = eilute;
+    m.push([a, b, c, d, e]);
     document.getElementById("forma").reset();
 }
 
+function nauja_funkcija() {
+var tekstas = '';
+        for (i = 0; i < m.length; i++) {
+
+            tekstas += '<tr>';
+
+            for (j = 0; j < m[i].length; j++) {
+                tekstas += stulpelis(m[i][j]); 
+            }   
+
+            tekstas += '</tr>';
+        }
+        document.querySelector('tbody').innerHTML = tekstas;
+    }
+        function stulpelis(reiksme) {
+            var td = '<td>' + reiksme + '</td>';
+            return td;
+        }
 </script>
         
 
