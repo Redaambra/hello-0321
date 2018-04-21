@@ -1,0 +1,21 @@
+body {padding: 50px 50px 0 50px;
+background-color: c8cfdc;
+font-family: 'Roboto', sans-serif;}
+
+header {
+    background-color: #fff;
+    padding-bottom: 150px;
+}
+
+header nav {
+    padding: 20px 30px 78px 20px;
+    color: #333333;
+    overflow: auto;
+}
+header nav .leftSide {
+    float: left;
+}
+header nav .rightSide {
+    float:right;
+}
+ul {list-style: none;}
