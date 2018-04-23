@@ -29,22 +29,11 @@
             {'data': '2018-01-03', 'numeris': 'ABC003', 'atstumas': 5000, 'laikas': 105},
             {'data': '2018-01-04', 'numeris': 'ABC004', 'atstumas': 5000, 'laikas': 111}
         ];
-        
-        var sortOrder;
-        function sort(laukas) {
-            sortOrder = (a, b) => {
-                return a[laukas] < b[laukas] ? -1 : a[laukas] > b[laukas] ? 1 : 0;
-            }; 
-            lentele();
-        }
-
 
         lentele();
 
         function lentele() {
             var lentele = '';
-            sortOrder = sortOrder || sort('data');
-            auto.sort(sortOrder);
             auto.forEach((a, i) => {
                 lentele += 
                     '<tr>' +
