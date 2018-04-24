@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20180420 paskaiciavimai</title>
+    <style>
+    table {border:1px solid black; border-collapse: collapse;}
+    tr, td {border:1px solid black;}
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Data</td>
+                <td>Auto nr</td>
+                <td>Atstumas, m</td>
+                <td>Laikas, s</td>
+                <td>Greitis, km/h</td>
+            
+            </tr>
+        </thead>
+        <tbody id="a"></tbody>
+    </table>
+
+    <script>
+   /* var auto = [
+            ['2018-01-01', 'FFF023', 5000, 100], 
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 0],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-02', 'BBB023', 5000, 99],
+            ['2018-01-03', 'AAA123', 5000, 101],
+            ['2018-01-02', 'BBB023', 5000, 99],
+        ];*/
+
+    var auto = [
+            {'data':'2018-04-01', 'numeris':'FFF023', 'atstumas': 5000, 'laikas': 100}, 
+            {'data':'2018-01-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 99},
+            {'data':'2018-05-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 0},
+            {'data':'2018-01-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 99},
+            {'data':'2018-09-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 99},
+            {'data':'2018-01-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 99},
+            {'data':'2018-01-03', 'numeris':'AAA123', 'atstumas':5000, 'laikas': 101},
+            {'data':'2018-01-02', 'numeris':'BBB023', 'atstumas':5000, 'laikas': 99}
+            ];
+            //masyvo viduje yra objektai
+        var lentele = '';
+        auto.sort((a,b) => {
+           /* if (a.data < b.data) return -1;
+            else if (a.data > b.data) return 1;
+            else return 0;*/
+            /* zemiau yra sio kodo sutrumpinimas */
+             return a.data < b.data ? -1 : a.data <b.data ? 1 : 0;
+
+        })
+        auto.forEach(a => {
+            lentele += '<tr>'+
+            '<td>' + a.data + '</td>' +
+            '<td>' + a.numeris + '</td>' + 
+            '<td>' + a.atstumas + '</td>' +
+            '<td>' + a['laikas'] + '</td>' + 
+            '<td>' + (a['atstumas'] / a['laikas'] *3.6 ).toFixed(0) + '</td>' + '</tr>'});
+         document.getElementById('a').innerHTML = lentele;   
+       //kintamieji aprasyti dviem budais: kaip masyvo objektai ir kaip masyvo indeksai.
+    </script>
+</body>
+</html>

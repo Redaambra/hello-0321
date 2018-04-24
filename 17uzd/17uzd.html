@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kvadratas/apskritimas</title>
+    <style>
+    .kvadratas {
+        width: 300px; 
+        height: 300px; 
+        background-color: red;
+        margin: auto;
+    }
+
+    .apskritimas {
+        margin: auto;
+        animation: zalias 3s;
+        animation-fill-mode: forwards; 
+        animation-timing-function: ease; 
+    }
+    
+    @keyframes zalias {
+            to {background-color: green;
+                width: 400px; 
+                height: 400px; 
+                border-radius: 50%;}   }
+    </style>
+
+</head>
+<body>
+    <div class="kvadratas"></div>
+    <button onclick="ani()">keisti</button>
+
+    <script>
+    function ani() {
+        document.getElementsByClassName("kvadratas").className = "apskritimas";
+    }
+    </script>
+
+</body>
+</html>

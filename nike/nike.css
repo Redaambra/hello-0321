@@ -18,4 +18,59 @@ header nav .leftSide {
 header nav .rightSide {
     float:right;
 }
-ul {list-style: none;}
+ul {list-style: none;
+}
+nav .rightSide li,
+nav .leftSide li,
+nav .leftSide img {display: inline-block;
+    vertical-align: middle; /*nustumia i eilutes viduri*/
+}
+
+nav .leftSide img {
+    margin-right: 30px;
+}
+
+nav .leftSide li:not(:last-of-type) {
+    margin-right: 42px;
+}
+nav .leftSide li, 
+nav .rightSide li {
+    text-transform: uppercase;
+    color: #333333;
+    cursor: pointer;
+}
+nav .rightSide {
+    line-height: 50px;
+}
+nav .rightSide li:not(:last-of-type) {
+    margin-right: 30px;
+}
+nav .rightSide li img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.cart {
+    margin-top:-4px;
+}
+
+nav .rightSide span {
+    color: #0089cf;
+ /* nezinau kodel uzkele i virsu, todel naudojama vertical-align:top */
+}
+header .topWrapper {
+    width: 78%;
+    margin: auto;
+    font-size: 0px;
+}
+header .topWrapper .shoe {
+    width: 74%;
+    display:inline-block;
+    vertical-align: bottom;
+}
+
+header .rightSide {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 26%;
+    font-size: 16px;
+}
