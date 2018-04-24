@@ -14,13 +14,15 @@
         animation: raudonas 3s;
         animation-fill-mode:forwards; 
         animation-timing-function: ease;
+        text-align: center;
+
     }
     .apskritimas {
         width: 300px; 
         height: 300px; 
         margin: auto;
         background-color: green;
-         animation: zalias 3s;
+        animation: zalias 3s;
         animation-fill-mode: forwards; 
         animation-timing-function: ease;
 
@@ -36,8 +38,8 @@
 
 </head>
 <body>
-    <div id="kvadratas" onclick="ani()" class="kvadratas">Nesamoniu muziejus</div>
-<div id="a">suma sumarum</div>
+    <div id="kvadratas" onclick="ani()" class="kvadratas">Spausti</div>
+
     <script>
     function ani() {
         var element = document.getElementById("kvadratas")
@@ -46,12 +48,6 @@
 
 
 
-//antro divo "suma sumarum" klick ivykio kitoks aprasymas 
-    document.getElementById("a").addEventListener("click", myFunction);
-
-    function myFunction() {
-    document.getElementById("a").innerHTML = "YOU CLICKED ME!";
-}
     </script>
     
 </body>
