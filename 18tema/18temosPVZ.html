@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">A12</div>
+
+    <script>
+    var figura = {
+        ilgis:15,
+        plotis:20
+    }
+    function plotas() {
+        return figura.ilgis * figura.plotis;
+    }
+
+    figura.plotas = plotas();
+
+    document.getElementById("a").innerHTML = figura.ilgis + ' x ' + figura.plotis + ' = ' + figura.plotas;
+
+    </script>
+
+
+</body>
+</html>

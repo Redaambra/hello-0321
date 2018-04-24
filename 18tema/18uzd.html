@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slaptazodzio keitimas</title>
+</head>
+<body>
+    <form name=“forma” onsubmit="return onFormSubmit()">
+        <input name=“slaptas” type=“number”>
+        <input name=“slaptas2” type=“number”>
+        <button onclick="tikrinti()">Saugoti</button>
+        </form>
+        <p id="a"></p>
+
+<script>
+
+    function tikrinti() {
+        a = document.getElementsByName('slaptas');
+        b = document.getElementsByName("slaptas2");
+        if (a == b) 
+            return document.getElementById('a').innerHTML = b;
+            else return document.getElementById('a').innerHTML = 'slaptažodis neteisingas';
+        }
+    
+</script>
+</body>
+</html>

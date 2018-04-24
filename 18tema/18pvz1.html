@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pvz1
+    </title>
+</head>
+<body>
+    
+
+    <script>
+
+var Automobilis;
+var a1 = new Automobilis('LRS001', 5000, 150);
+var a2 = new Automobilis ('ABC222', 5000, 125);
+
+    function Automobilis(nr, s, t) {
+this.numeris = nr;
+this.atstumas = s;
+this.laikas = t;
+this.greitis = function () {
+return this.atstumas / this.laikas * 3.6;
+};
+}
+Automobilis.prototype.greitisms = function() { return this.atstumas / this.laikas };
+
+console.log( a1.greitisms() );
+console.log( a2.greitisms() );
+console.log( a1)
+
+    </script>
+</body>
+</html>

@@ -13,6 +13,7 @@
         table {
             border: 1px solid black;
             border-collapse: collapse;
+            background-color:beige;
             
         }
 
@@ -37,7 +38,10 @@
         body {
             padding: 10px;
         }
-        input {width: 90px;}
+        input {
+            width: 90px;
+            background-color: antiquewhite;
+                }
        
     </style>
 </head>
@@ -74,7 +78,7 @@
                 <th>Laikas, m</th>
                 <th>Greitis, km/h</th>
                 <th>Veiksmai</th>
-                <th>Koreguoti laiką</th>
+                <th>Koreguoti atstuma</th>
             </tr>
         </thead>
         <tbody id="a">
@@ -87,7 +91,9 @@
     <script>
 var m = [
     {'data': '1', 'numeris': '2', 'atstumas': 3, 'laikas': 4, 'greitis': 5}, 
-    {'data': '5', 'numeris': '6', 'atstumas': 7, 'laikas': 8, 'greitis': 9}];
+    {'data': '5', 'numeris': '6', 'atstumas': 7, 'laikas': 8, 'greitis': 9},
+    {'data': '111', 'numeris': '222', 'atstumas': 333, 'laikas': 4444, 'greitis': 555}
+    ];
 
 function ikelti() {
     m.push({
@@ -100,7 +106,6 @@ function ikelti() {
     document.getElementById("forma").reset();
 }
 
-lentele();
 
 function lentele() {
     var lentele = '';
@@ -112,8 +117,8 @@ function lentele() {
                 '<td>' + a.atstumas + '</td>' +
                 '<td>' + a.laikas + '</td>' +
                 '<td>' + (a.atstumas / a.laikas * 3.6).toFixed(2) + '</td>' +
-                '<td>' + '<button onclick="trinti('+i+')">Trinti</button>' + '</td>' +
-                '<td>' + '<input class="kuku"><button onclick="taisyti('+i+')">Taisyti</button>' + '</td>' +
+                '<td>' + '<button onclick="trinti('+ i +')">Trinti</button>' + '</td>' +
+                '<td>' + '<input class="kuku"><button onclick="taisyti_atstuma()">Taisyti</button>' + '</td>' +
 
             '</tr>';
     });
@@ -127,11 +132,13 @@ function trinti(k) {
     lentele();
 }
 
-function taisyti(k) {
+function taisyti_atstuma() {
+    delete m[0].atstumas;
     var b = document.getElementsByClassName('kuku').value;
-    m[i].splice(k, 1, b);
+    m[0].atstumas = b;
     document.getElementsByClassName('kuku').reset();
-}
+    lentele();}
+
    
    
     </script>

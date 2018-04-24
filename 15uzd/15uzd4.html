@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto ivedimo laukai</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 40vw;
+        }
+
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+            width: 100px;
+        }
+
+        .laukas {
+            width: 300px;
+            border: 1px solid black;
+            height: 20px;
+        }
+
+        input {
+            float: right;
+            background-color: lightgrey;
+        }
+
+        #forma {
+            width: 40vw;
+        }
+
+        body {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Automobilių duomenų įvedimo langas</h3>
+    <form id="forma">
+        <div class="form-group">
+            <label>Data</label>
+            <input class=" form-control" ; type="date" id="data" value="">
+        </div>
+        <div class="form-group">
+            <label>Auto nr.</label>
+            <input class=" form-control" type="text" id="numeris" value="">
+        </div>
+        <div class="form-group">
+            <label>Atstumas, m</label>
+            <input class=" form-control" type="number" id="atstumas" value="">
+        </div>
+        <div class="form-group">
+            <label>Laikas, s</label>
+            <input class=" form-control" type="number" id="laikas" value="">
+        </div>
+    </form>
+
+    <button class="btn btn-default" ; onclick="mano_funkcija(), nauja_funkcija()">Saugoti</button>
+    <p id="demo"></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Auto nr.</th>
+                <th>Atstumas, s</th>
+                <th>Laikas, m</th>
+                <th>Greitis, km/h</th>
+                <th>Veiksmai</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+
+
+    </table>
+
+
+    <script>
+        var m = [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9]]
+
+        function mano_funkcija() {
+            var a = document.getElementById("data").value;
+            var b = document.getElementById('numeris').value;
+            var c = document.getElementById('atstumas').value;
+            var d = document.getElementById('laikas').value;
+            var e = Math.round(c / d * 3.6);
+            m.push([a, b, c, d, e]);
+            document.getElementById("forma").reset();
+        }
+
+        nauja_funkcija();
+
+        function nauja_funkcija() {
+            var tekstas = '';
+            for (i = 0; i < m.length; i++) {
+                tekstas += '<tr>';
+
+                for (j = 0; j < m[i].length; j++) {
+                    tekstas += stulpelis(m[i][j]);
+                }
+
+                tekstas += '<td><button class="btn btn-default"; onclick="trinti(' + i + ')">Trinti</button></td>' + '</tr>';
+            }
+            document.querySelector('tbody').innerHTML = tekstas;
+        }
+
+        function stulpelis(reiksme) {
+            var td = '<td>' + reiksme + '</td>';
+            return td;
+        }
+
+        function trinti(k) {
+            m.splice(k, 1);
+            nauja_funkcija();
+        }
+
+        function taisyti_atstuma(index) {
+           delete m[index];
+        
+
+    </script>
+
+
+
+</body>
+
+</html>
