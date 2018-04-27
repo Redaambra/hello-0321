@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slaptazodzio keitimas</title>
+    <style>
+    .kont {margin: auto;}
+    </style>
 </head>
 <body>
-    <form name=“forma” onsubmit="return onFormSubmit()">
-        <input name=“slaptas” type=“number”>
-        <input name=“slaptas2” type=“number”>
+    <form class="kont" name=“forma” onsubmit="return onFormSubmit()">
+        <input name=“slaptas” type=“text”>
+        <input name=“slaptas2” type=“text”>
         <button onclick="tikrinti()">Saugoti</button>
         </form>
-        <p id="a"></p>
+        <p id="a">Prašome pakeisti slaptažodį</p>
 
 <script>
 

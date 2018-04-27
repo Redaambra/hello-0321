@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+</head>
+<body id="a">
+    <h1>Antraste</h1>
+    <div>
+        <p data="b">Kazkoks paragrafas</p>
+        <div>
+            <p data="b">Kazkoks paragrafas</p>
+        </div>
+        <p data="b">Kitas paragrafas</p>
+    </div>
+    <script>
+        var body = document.body;
+        keisti(body);
+
+        var finish = false; 
+        function keisti(e) {
+            if (finish) return;
+            if (e.hasAttribute && e.hasAttribute('data')) {
+                var attr = e.getAttribute('data');
+                if (attr == 'b') {
+                    e.innerHTML = 'Labas';
+                    finish = true;
+                    return;
+                }
+            } 
+            if (e.hasChildNodes()) {
+                var c = e.childNodes;
+                c.forEach(x => keisti(x));
+            }
+        }
+
+    </script>
+</body>
+</html>

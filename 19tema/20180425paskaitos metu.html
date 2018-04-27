@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="a1">title1</h1>
+    <h2 id="a2">title2</h2>
+    <h3 id="a3">title3</h3>
+    <h3 id="a4">title3</h3>
+
+    <script>
+        var diena = new Date();
+        var s = 0;
+
+
+
+
+
+
+    var diena = new Date(); /*zodelis "new" sukuria objekta. tokiu budu diena tampa ne kintamuoju, bet objektu*/
+    var diena2 = addMonth(diena);
+
+function addMonth(date) {
+    /*sukuriamas naujas kintamas datos sugarzinimui*/
+    var date2 = new Date(date.getTime());
+    date2.setMonth(date2.getMonth() +1)
+    return date2;
+
+}
+diena.rytas = "vakaras";
+Date.prototype.rytas = 'vakaras';
+
+    document.getElementById('a1').innerHTML = diena.toLocaleString();
+    document.getElementById('a2').innerHTML = addMonth(diena).toLocaleString();
+    document.getElementById('a3').innerHTML = diena.rytas;
+    document.getElementById('a4').innerHTML = diena2.rytas;
+
+
+    </script>
+</body>
+</html>

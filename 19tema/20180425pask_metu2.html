@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+/*uzduotis issaugoti duomenis, kad kita karta atidarius langa isliktu seniau issaugoti duomenys*/
+
+
+        <div id="a1">title1</div>
+        <div id="a2">title2</div>
+
+
+
+
+        <script>
+
+            
+
+
+
+        var auto = [
+            {data: '2018-01-01', numeris: 'ABC123'},
+            {data: '2018-01-02', numeris: 'ABC456'}
+        ];
+
+lentele();
+
+function lentele(){
+var text ="";
+    auto.forEach(a => text+="<div>" + a.numeris + '</div>')
+    document.getElementById('a2').innerHTML = text;
+}
+
+    document.getElementById('a3').innerHTML = JSON.stringify(auto);
+   // window.localStorage.setItem('automobiliai', JSON.stringify(auto))    
+        
+        
+        
+        
+        </script>
+    
+</body>
+</html>
+
+
+/*i console vesti windows
+
+
+// var 

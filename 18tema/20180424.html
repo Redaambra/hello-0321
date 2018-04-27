@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A</title>
+</head>
+
+<body>
+    <div id="a">A12</div>
+    <script>
+        function Figura(ilgis, plotis) {
+            this.ilgis = ilgis || 1;
+            this.plotis = plotis || 2;
+            this.plotas = function() { 
+                return this.ilgis * this.plotis; 
+            };
+        }        
+        var figura = new Figura(15, 20);
+        var figura2 = new Figura();
+
+        figura2.spalva = 'red';
+        Figura.prototype.spalva = 'white';
+
+        var d = new Date();
+
+        Date.prototype.mano = function() {
+            return this.getFullYear() + ':' + (this.getMonth() + 1) + ':' + this.getDate();
+        };
+
+        var elementas = document.getElementById('a'); 
+        elementas.innerHTML = d.mano();
+
+        [figura, figura2].forEach(f => {
+            elementas.innerHTML += '<br>' +
+                f.ilgis + ' x ' + f.plotis + ' = ' + f.plotas() + ' ' +
+                f.spalva
+        });
+        
+    </script>
+</body>
+
+</html>
