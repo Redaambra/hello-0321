@@ -47,11 +47,11 @@
     function tikrinti() {
         var a = document.getElementById("s1").value;
         var b = document.getElementById("s2").value;
-        if (a == b) {document.getElementById('a').innerHTML = "Vartotojas užregistruotas!";
-        } else if (a = '') {alert("Slaptažodis neįvestas");}
+        if (a == '') {alert("Slaptažodis neįvestas");}
+        else if (a == b) {document.getElementById('a').innerHTML = "Vartotojas užregistruotas!";}
         else {alert("Slaptažodis nesutampa");}
         }
-
+        
         $('button').click(function(){
         $('input').val('');
          });
