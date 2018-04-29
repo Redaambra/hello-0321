@@ -21,22 +21,18 @@
         td,
         tr {
             border: 1px solid black;
-            width: 90px;
             text-align: center;
-        }
+                }
+        th, td {width: 10vw; }
 
-        .laukas {
-            width: 300px;
-            border: 1px solid black;
-            height: 20px;
-        }
-        .mgt {width:90px;}
+        .form-control {width: 90%;}
+      
         #forma {
             width: 40vw;
         }
 
         body {
-            padding: 10px;
+            padding: 8px;
             background-image: url(auto_sketch2.jpg);
             background-attachment: fixed;
             background-repeat: no-repeat;
@@ -44,69 +40,71 @@
 
         }
         input {
-            width: 90px;
+            width: 40px;
             background-color: rgb(230, 225, 225);;
                 }
         #kuku {display: none;}
+
+        table {
+            display: none;
+            width: 48vw;
+            }
 
        
     </style>
 </head>
 
 <body>
-        <div class="container">
-                <h2>MAutomobilių duomenų įvedimas</h2>
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Naujas</button>
-              
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog">
-                  
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Įveskite datą, numerį, atstumą ir laiką:</h4>
-                      </div>
-                      <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                    
-                  </div>
+<div class="container">
+        <h2>Automobilių duomenų įvedimas</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Naujas</button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Įveskite datą, numerį, atstumą ir laiką:</h4>
                 </div>
+                <div class="modal-body">
+                    <h3>Automobilių duomenų įvedimo langas</h3>
+                    <form id="forma">
+                        <div class="form-group">
+                            <label>Data</label>
+                            <input class=" form-control" ; type="date" id="data" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Auto nr.</label>
+                            <input class=" form-control" type="text" id="numeris" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Atstumas, m</label>
+                            <input class=" form-control" type="number" id="atstumas" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Laikas, s</label>
+                            <input class=" form-control" type="number" id="laikas" value="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn1" class="btn btn-default" ; onclick="ikelti(), lentele()" data-dismiss="modal">Įrašyti</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
                 
-              </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
 
 
-    /*nuo cia sena uzduotis*/
-    <h3>Automobilių duomenų įvedimo langas</h3>
-    <form id="forma">
-        <div class="form-group">
-            <label>Data</label>
-            <input class=" form-control" ; type="date" id="data" value="">
-        </div>
-        <div class="form-group">
-            <label>Auto nr.</label>
-            <input class=" form-control" type="text" id="numeris" value="">
-        </div>
-        <div class="form-group">
-            <label>Atstumas, m</label>
-            <input class=" form-control" type="number" id="atstumas" value="">
-        </div>
-        <div class="form-group">
-            <label>Laikas, s</label>
-            <input class=" form-control" type="number" id="laikas" value="">
-        </div>
-    </form>
 
-    <button class="btn btn-default" ; onclick="ikelti(), nauja_funkcija()">Saugoti</button>
-    <p id="demo"></p>
+    <p id="demo">demo paragrafas</p>
     <table>
         <thead>
             <tr>
@@ -116,8 +114,7 @@
                 <th>Laikas, m</th>
                 <th>Greitis, km/h</th>
                 <th>Veiksmai</th>
-                <th>Koreguoti</th>
-                <th>Koreguoti</th>
+          
             </tr>
         </thead>
         <tbody id="a">
@@ -158,9 +155,8 @@ function lentele() {
                 '<td>' + a.atstumas + '</td>' +
                 '<td>' + a.laikas + '</td>' +
                 '<td>' + (a.atstumas / a.laikas * 3.6).toFixed(2) + '</td>' +
-                '<td>' + '<button onclick="trinti('+ i +')">Trinti</button>' + '</td>' +
-                '<td><button onclick="taisyti(' + i + ')">Taisyti</button></td>' +
-                '<td><button onclick="issaugoti(' + i + ')">Išsaugoti</button></td>' +
+                '<td>' + '<button class="btn btn-default" onclick="trinti('+i+')" >Trinti</button>' +
+                '<button class="btn btn-default" onclick="taisyti('+i+')" >Taisyti</button>' + '</td>' +
                 '</tr>'
     });
     document.getElementById('a').innerHTML = lentele;
@@ -175,24 +171,32 @@ function trinti(k) {
 
 function taisyti(index) {
             var a = m[index];
-            document.getElementById("data").value = a.data,
-            document.getElementById("numeris").value = a.numeris,
-            document.getElementById("atstumas").value = a.atstumas,
-            document.getElementById("laikas").value = a.laikas;
+            document.getElementById("data2").value = a.data,
+            document.getElementById("numeris2").value = a.numeris,
+            document.getElementById("atstumas2").value = a.atstumas,
+            document.getElementById("laikas2").value = a.laikas;
 
         }
 
         function issaugoti(index) {
             var a = m[index]
-            a.data = document.getElementById("data").value;
-            a.numeris = document.getElementById("numeris").value;
-            a.atstumas = document.getElementById("atstumas").value;
-            a.laikas = document.getElementById("laikas").value;
+            a.data = document.getElementById("data2").value;
+            a.numeris = document.getElementById("numeris2").value;
+            a.atstumas = document.getElementById("atstumas2").value;
+            a.laikas = document.getElementById("laikas2").value;
             lentele();
 
         }
 
-   
+        $(document).ready(function(){
+    $("#btn1").click(function(){
+        $("table").show();
+    });
+});
+
+
+
+
    
     </script>
 

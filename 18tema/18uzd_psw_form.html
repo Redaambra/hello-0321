@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slaptazodzio keitimas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    #kont {
+        margin: auto;
+        width: 50vw;;}
+    
+    p {margin: auto;
+    width: 50vw;
+    color: green;
+    font-size: 2rem}
+    </style>
+</head>
+<body>
+   
+        <fieldset id="kont">
+          <legend>Naujo vartotojo registracija:</legend>
+          Vardas:<br>
+          <input type="text" name="firstname" >
+          <br>
+          Pavardė:<br>
+        <input type="text" name="lastname" >
+          <br><br>
+          Naujas slaptažodis:<br>
+          <input type="password" name="password1" id="s1">
+          <br><br>
+          Pakartokite slaptažodį:<br>
+          <input type="password" name="password2" id="s2">
+          <br><br>
+          <button onclick="tikrinti()">Registruoti</button>
+        </fieldset>
+        <br><br>
+        <p id="a"></p>
+
+<script>
+        var a = document.getElementById("s1").value;
+        var b = document.getElementById("s2").value;
+
+    function tikrinti() {
+        var a = document.getElementById("s1").value;
+        var b = document.getElementById("s2").value;
+        if (a == b) {document.getElementById('a').innerHTML = "Vartotojas užregistruotas!";
+        } else if (a = '') {alert("Slaptažodis neįvestas");}
+        else {alert("Slaptažodis nesutampa");}
+        }
+
+        $('button').click(function(){
+        $('input').val('');
+         });
+
+
+</script>
+</body>
+</html>
