@@ -12,6 +12,7 @@
     <?php echo "<h2>Langas į gamtą</h2>";
     echo "<footer>Metai:2000-".date("Y")."<footer>";
     echo "<input type="text" name="name">";
+      
    
     
     
