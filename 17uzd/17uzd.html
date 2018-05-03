@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>kvadratas/apskritimas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
-    .kvadratas {
+    body {margin: auto;}
+    div {
         width: 300px; 
         height: 300px; 
         background-color: red;
         margin: auto;
-        animation: raudonas 3s;
+        margin-top: 200px;
+        text-align: center;
+            }
+    p {
+        padding-top: 145px;
+    }
+
+
+    .kvadratas_animacija {
+        width: 300px; 
+        height: 300px; 
+        background-color: red;
+        margin: auto;
+        margin-top: 200px;
+        animation: raudonas 1s;
         animation-fill-mode:forwards; 
         animation-timing-function: ease;
         text-align: center;
@@ -21,8 +39,9 @@
         width: 300px; 
         height: 300px; 
         margin: auto;
+        margin-top: 200px;
         background-color: green;
-        animation: zalias 3s;
+        animation: zalias 1s;
         animation-fill-mode: forwards; 
         animation-timing-function: ease;
 
@@ -38,14 +57,28 @@
 
 </head>
 <body>
-    <div id="kvadratas" onclick="ani()" class="kvadratas">Spausti</div>
+    <div id="kvadratas" class="kvadratas"><p>Spausti</p></div>
 
-    <script>
-    function ani() {
-        var element = document.getElementById("kvadratas")
-        element.classList.toggle("apskritimas") ;
-    }
 
+<script>
+
+$(function() {    
+    $("#kvadratas").each(function() {
+        var count = 0;
+        $(this).click(function(){
+        count++;
+        if (count === 1) {
+            $(this).addClass('apskritimas');
+        }
+        else if(count === 2){
+            $(this).removeClass('apskritimas');
+            $(this).addClass('kvadratas_animacija');
+            count = 0;
+        }
+        
+        });
+    });
+});
 
 
     </script>
