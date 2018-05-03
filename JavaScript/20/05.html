@@ -10,9 +10,9 @@
 
 <body>
 
-    <input id="miestas" placeholder="Miestas" name="miestas" value="Kaunas">
-    <input placeholder="Gatvė" name="gatve">
-    <input placeholder="Numeris" name="numeris">
+    <input id="miestas" placeholder="Miestas" name="miestas" value="">
+    <input placeholder="Gatvė" name="gatve" id="gatve">
+    <input placeholder="Numeris" name="numeris" id="numeris">
     <button onclick="getPostIndex()">Pašto indeksas</button>
 
     <p></p>
@@ -20,8 +20,8 @@
     <script>
         function getPostIndex() {
             var miestas = $('#miestas').val();
-            var gatve = $('input[name="gatve"]').val();
-            var numeris = $('input[name="numeris"]').val();
+            var gatve = $('#gatve').val();
+            var numeris = $('#numeris').val();
 
             $.get('https://postit.lt/data', {'address': gatve + ' ' + numeris +', ' + miestas}, function(resp) {
                 console.log(resp);

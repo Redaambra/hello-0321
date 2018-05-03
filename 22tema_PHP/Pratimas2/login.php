@@ -8,14 +8,17 @@
 </head>
 <body>
 
+<?php
+if($_POST['user'] == 'Jonas' && $_POST['pass'] == '123') {
+    //echo "YES";
+    include "info.php";
+    } else {
+        //echo "NO";
+        include "index.php";
+    }
 
-    <?php echo "<h2>Langas į gamtą</h2>";
-    echo "<footer>Metai:2000-".date("Y")."<footer>";
-    echo "<input type="text" name="name">";
-      
-   
+
+?>
     
-    
-    ?>
 </body>
 </html>

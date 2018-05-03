@@ -19,47 +19,42 @@
 <body>
     <div class="container">
         <h2>Pašto kodo paieška</h2>
-        <p>Užpildyti visus laukelius</p>
-        <form>
+         <form>
             <div class="form-group">
-                <label for="usr">Savivaldybė/miestas:</label>
+                <label for="savivaldybe">Savivaldybė:</label>
                 <input type="text" class="form-control" id="savivaldybe">
             </div>
             <div class="form-group">
-                <label for="pwd">Gyvenvietė:</label>
-                <input type="text" class="form-control" id="gyvenviete">
+                <label for="miestas">Miestas/gyvenvietė:</label>
+                <input type="text" class="form-control" id="miestas">
             </div>
             <div class="form-group">
-                <label for="pwd">Gatvė:</label>
+                <label for="gatve">Gatvė:</label>
                 <input type="text" class="form-control" id="gatve">
             </div>
             <div class="form-group">
-                    <label for="pwd">Namo numeris:</label>
+                    <label for="numeris">Namo numeris:</label>
                     <input type="number" class="form-control" id="numeris">
             </div>
-            <button onclick="getPostIndex()" type="submit" class="btn btn-default">Ieškoti</button>
-            <br><br>
-            <div class="form-group">                
-            <label for="disabledInput" class="col-sm-12 control-label">Pašto kodas</label>
-            <div class="col-sm-12">
-                <input class="form-control" id="disabledInput" type="text" placeholder="xxxxx" disabled>
+            <div class="form-group">
+                    <label for="pastoKodas">Pašto kodas:</label>
+                    <p id="pastoKodas">.....</p>
             </div>
-            <p>
-
-            </p>
-
+            <button onclick="getPostIndex()" type="button" class="btn btn-default">Ieškoti</button>
+            <button type="reset" class="btn btn-default">Išvalyti</button>
         </form>
     </div>
+  
 
     <script>
 
         function getPostIndex() {
             var savivaldybe = $('#savivaldybe').val();
-            var miestas = $('#gyvenviete').val();
+            var miestas = $('#miestas').val();
             var gatve = $('#gatve').val();
             var numeris = $('#numeris').val();
 
-            $get('https://postit.lt/data', {'address': gatve + ' ' + numeris + ', ' + miestas}, function(resp) {
+            $.get('https://postit.lt/data', {'address': gatve + ' '+ numeris +', ' + miestas+ ', '+ savivaldybe}, function(resp) {
                 console.log(resp);
                 $('p').html(resp.data[0].post_code);
             });
