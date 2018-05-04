@@ -10,19 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        table {
-            border: 1px solid black;
-            border-collapse: collapse;
-           display: none;
+        .table {
+            display: none;
             width: 48vw;
-            background-color:floralwhite;
-        }
+            font-size: medium;
+             }
         button {width: 90px;}
 
         th,
         td,
         tr {
-            border: 1px solid black;
             text-align: center;
                 }
         th, td {width: 10vw; }
@@ -39,6 +36,7 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position-x: right;
+            background-size: 50vw;
 
         }
         input {
@@ -90,7 +88,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="btn1" class="btn btn-default" ; onclick="ikelti(), lentele()" data-dismiss="modal">Įrašyti</button>
+                    <button id="btn1" class="btn btn-default" ; onclick="ikelti()" data-dismiss="modal">Įrašyti</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
                 
                 </div>
@@ -113,7 +111,7 @@
                     </div>
                     <div class="modal-body">
                         <h4>Įveskite datą, numerį, atstumą ir laiką:</h4>
-                        <form id="forma">
+                        <form id="forma2">
                             <div class="form-group">
                                 <label>Data</label>
                                 <input class=" form-control" ; type="date" id="data2" value="">
@@ -133,7 +131,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="btn1" class="btn btn-default" ; onclick="" data-dismiss="modal">Įrašyti</button>
+                        <button id="btn2" class="btn btn-default" data-dismiss="modal">Įrašyti</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
                     
                     </div>
@@ -142,10 +140,32 @@
             </div>
     
 
+        <!-- Modalinis, duomenų trynimui skirtas langas-->
+
+        <div class="modal fade" id="modal_trynimui" role="dialog">
+                <div class="modal-dialog">
+                
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Automobilio duomenų koregavimas</h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Ar tikrai norite ištrinti?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn3" class="btn btn-default" data-dismiss="modal">Ištrinti</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
+                    
+                    </div>
+                </div>
+                </div>
+            </div>
 
 
     <p id="demo">demo paragrafas</p>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Data</th>
@@ -168,6 +188,9 @@
 
 
     <script>
+var deleteRow;
+
+
 var m = [
     {'data': '2018-01-01', 'numeris': 'AAA111', 'atstumas': 3, 'laikas': 4, 'greitis': 5}, 
     {'data': '2018-01-02', 'numeris': 'BBB222', 'atstumas': 7, 'laikas': 8, 'greitis': 9},
@@ -196,7 +219,7 @@ function lentele() {
                 '<td>' + a.atstumas + '</td>' +
                 '<td>' + a.laikas + '</td>' +
                 '<td>' + (a.atstumas / a.laikas * 3.6).toFixed(2) + '</td>' +
-                '<td>' + '<button class="btn btn-default" onclick="trinti('+i+')" >Trinti</button>' +
+                '<td>' + '<button class="btn btn-default" onclick="trinti('+i+')" data-toggle="modal" data-target="#modal_trynimui">Trinti</button>' +
                 '<button class="btn btn-default" onclick="taisyti('+i+')"  data-toggle="modal" data-target="#modal_taisymui" >Taisyti</button>' + '</td>' +
                 '</tr>'
     });
@@ -205,10 +228,10 @@ function lentele() {
 
 
 
-function trinti(k) {
+/* function trinti(k) {
     m.splice(k, 1);
     lentele();
-}
+} */
 
 function taisyti(index) {
             var a = m[index];
@@ -218,7 +241,7 @@ function taisyti(index) {
             document.getElementById("laikas2").value = a.laikas;
 
         }
-
+        /* var a = m[index] */
         function issaugoti(index) {
             var a = m[index]
             a.data = document.getElementById("data2").value;
@@ -229,11 +252,37 @@ function taisyti(index) {
 
         }
 
+
+//funkcija, kad paspaudus išsaugotų duomenis į tą patį masyvą.
         $(document).ready(function(){
+    $("#btn2").click(function(){
+            var a = m[index];
+            a.data = document.getElementById("data2").value;
+            a.numeris = document.getElementById("numeris2").value;
+            a.atstumas = document.getElementById("atstumas2").value;
+            a.laikas = document.getElementById("laikas2").value;
+            lentele();
+    });
+});
+
+
+//funkcija, kad paspaudus parodytų lentelę.
+$(document).ready(function(){
     $("#btn1").click(function(){
         $("table").show();
     });
 });
+
+//*****************************************************
+
+        function trinti(eilute) {
+            deleteRow = eilute;
+        };
+
+ function YesDelete(eilute) {
+            m.splice(eilute, 1);
+            lentele();
+        }
 
 
 
