@@ -131,7 +131,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="btn2" class="btn btn-default" data-dismiss="modal">Įrašyti</button>
+                        <button id="btn2" class="btn btn-default" data-dismiss="modal" onclick="issaugoti(editRow)">Įrašyti</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
                     
                     </div>
@@ -155,7 +155,7 @@
                         <h4>Ar tikrai norite ištrinti?</h4>
                     </div>
                     <div class="modal-footer">
-                        <button id="btn3" class="btn btn-default" data-dismiss="modal">Ištrinti</button>
+                    <button type="button" id="btn3" class="btn btn-default" data-dismiss="modal" onclick="trintiTikrai(deleteRow)">Ištrinti</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Atšaukti</button>
                     
                     </div>
@@ -164,10 +164,11 @@
             </div>
 
 
-    <p id="demo">demo paragrafas</p>
+    
     <table class="table">
         <thead>
             <tr>
+                <th>Indeksas</th>
                 <th>Data</th>
                 <th>Auto nr.</th>
                 <th>Atstumas, s</th>
@@ -189,6 +190,7 @@
 
     <script>
 var deleteRow;
+var editRow;
 
 
 var m = [
@@ -213,13 +215,14 @@ function lentele() {
     var lentele = '';
     m.forEach((a, i) => {
         lentele += 
-            '<tr>' +
+            '<tr >' +
+                '<th scope="row">' + i + '</th>' +
                 '<td>' + a.data + '</td>' +
                 '<td>' + a.numeris + '</td>' +
                 '<td>' + a.atstumas + '</td>' +
                 '<td>' + a.laikas + '</td>' +
                 '<td>' + (a.atstumas / a.laikas * 3.6).toFixed(2) + '</td>' +
-                '<td>' + '<button class="btn btn-default" onclick="trinti('+i+')" data-toggle="modal" data-target="#modal_trynimui">Trinti</button>' +
+                '<td>' + '<button class="btn btn-default" data-toggle="modal" data-target="#modal_trynimui" onclick="trinti(' + i + ')">Trinti</button>' +
                 '<button class="btn btn-default" onclick="taisyti('+i+')"  data-toggle="modal" data-target="#modal_taisymui" >Taisyti</button>' + '</td>' +
                 '</tr>'
     });
@@ -228,34 +231,29 @@ function lentele() {
 
 
 
-/* function trinti(k) {
-    m.splice(k, 1);
-    lentele();
-} */
-
 function taisyti(index) {
-            var a = m[index];
-            document.getElementById("data2").value = a.data,
-            document.getElementById("numeris2").value = a.numeris,
-            document.getElementById("atstumas2").value = a.atstumas,
-            document.getElementById("laikas2").value = a.laikas;
+    editRow = index;
+    var a = m[index];
+    document.getElementById("data2").value = a.data,
+    document.getElementById("numeris2").value = a.numeris,
+    document.getElementById("atstumas2").value = a.atstumas,
+    document.getElementById("laikas2").value = a.laikas;
 
         }
-        /* var a = m[index] */
-        function issaugoti(index) {
-            var a = m[index]
-            a.data = document.getElementById("data2").value;
-            a.numeris = document.getElementById("numeris2").value;
-            a.atstumas = document.getElementById("atstumas2").value;
-            a.laikas = document.getElementById("laikas2").value;
-            lentele();
 
-        }
+function issaugoti(index) {
+    var a = m[index]
+    a.data = document.getElementById("data2").value;
+    a.numeris = document.getElementById("numeris2").value;
+    a.atstumas = document.getElementById("atstumas2").value;
+    a.laikas = document.getElementById("laikas2").value;
+    lentele();
+}
 
 
 //funkcija, kad paspaudus išsaugotų duomenis į tą patį masyvą.
         $(document).ready(function(){
-    $("#btn2").click(function(){
+         $("#btn2").click(function(){
             var a = m[index];
             a.data = document.getElementById("data2").value;
             a.numeris = document.getElementById("numeris2").value;
@@ -275,11 +273,11 @@ $(document).ready(function(){
 
 //*****************************************************
 
-        function trinti(eilute) {
-            deleteRow = eilute;
-        };
+    function trinti(eilute) {
+    deleteRow = eilute;
+};
 
- function YesDelete(eilute) {
+    function trintiTikrai(eilute) {
             m.splice(eilute, 1);
             lentele();
         }
