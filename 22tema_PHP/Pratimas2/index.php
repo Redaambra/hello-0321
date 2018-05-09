@@ -10,8 +10,9 @@
     <h1> Login </h1>
     <form action="login.php" method="post">
         <input name='user' placeholder="login">
-        <input type='password' name='pass' placeholder="passwor">
+        <input type='password' name='pass' placeholder="password">
         <button>Login</button>
+    </form>
 
     
 </body>

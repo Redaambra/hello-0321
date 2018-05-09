@@ -28,7 +28,7 @@ $laikas = 99;
 $sql = "INSERT INTO `radars`(`date`, `number`, `distance`, `time`) VALUES(?, ?, ?, ?)"; 
 //$stmt = $conn->prepare($sql);
 
-if (!($stmt = $conn->prepare($insert))) {
+if (!($stmt = $conn->prepare($sql))) {
     echo json_encode([
         success => false,
         error => $conn->error

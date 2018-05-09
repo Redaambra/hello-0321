@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ValdoPVZ</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div></div>
+    <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>Data</td>
+                <td>Numeris</td>
+                <td>Atstumas</td>
+                <td>Laikas</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        $(function () {
+            gautiLentele();
+        });
+
+
+        function gautiLentele() {
+            $.get('lentele.php', function (resp) {
+                if (resp.success) {
+                    rodytilentele(resp.data);
+                } else {
+                    $('div').text('kazkokia klaida');
+                }
+            }).fail(function () {
+                $('div').text('kazkokia rimta klaida');
+            });
+        }
+
+
+
+        function rodytilentele(data) {
+            var txt = '';
+            data.forEach(x => {
+                txt += '<tr>' +
+                    '<td>' + x.id + '</td>' +
+                    '<td>' + x.date + '</td>' +
+                    '<td>' + x.number + '</td>' +
+                    '<td>' + x.distance + '</td>' +
+                    '<td>' + x.time + '</td>' +
+                    '<td>' +
+                    // '<a href="trinti.php?id=' + x.id + '">Trinti</a>' + 
+                    '<button onclick="trinti(' + x.id + ')">Trinti</button>' +
+                    '</td>' +
+                    '</tr>';
+            });
+            document.querySelector('tbody').innerHTML = txt;
+        }
+
+        function trinti(autoId) {
+            $.get('trinti.php', { id: autoId }, function (resp) {
+                if (resp.success) {
+                    gautiLentele();
+
+                } else {
+                    $('div').text('kazkokia klaida trinant');
+                }
+            }).fail(function () {
+                $('div').text('kazkokia rimta klaida trinant');
+            });
+        }
+
+    </script>
+</body>
+
+</html>
