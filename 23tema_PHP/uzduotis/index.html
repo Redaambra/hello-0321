@@ -60,7 +60,7 @@
         <br>
         <br>
         <br>
-        <button class="btn btn-info btn-lg">Naujas įrašas</button>
+        <button onclick="naujasAuto()" class="btn btn-info btn-lg">Naujas įrašas</button>
         <br>
         <br>
         <br>
@@ -186,7 +186,7 @@
             document.getElementById("newLine").style.visibility = 'visible';
             document.getElementById('container').style.filter = 'blur(2px)';
 
-            document.getElementById('taisyti-ok').onclick = function () {
+        /*     document.getElementById('taisyti-ok').onclick = function () {
                 $.get('taisyti.php', { id: autoId }, function (resp) {
                     if (resp.success) {
                         gautiLentele();
@@ -194,11 +194,15 @@
                         $('div').text('klaida trynimo metu');
                     }
                 });
-            }
+            } */
 
         }
 
+        function naujasAuto() {
+            document.getElementById("newLine").style.visibility = 'visible';
+            document.getElementById('container').style.filter = 'blur(2px)';
 
+        }
     </script>
 </body>
 
