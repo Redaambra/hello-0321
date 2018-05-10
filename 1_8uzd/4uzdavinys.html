@@ -5,7 +5,11 @@
     <title>CSS blokai</title>
     <meta charset="UTF-8">
     <style>
-        body {margin:0; padding:0;}
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         .container {
             background-color: cornflowerblue;
             margin: 5px;
@@ -21,7 +25,7 @@
             height: 25vw;
             width: 25vw;
             margin: 5px;
-            
+
         }
 
         div.block:hover {
@@ -31,7 +35,7 @@
         .strocked {
             border: 8px solid black;
             margin: 5px;
-            
+
         }
 
         .rectangle {
@@ -40,24 +44,29 @@
             height: 25vw;
             text-align: right;
             margin: 5px;
-            
+
         }
 
         div.strocked.rectangle {
-            background-color: greenyellow; border:0;
-           
+            background-color: greenyellow;
+            border: 0;
+
         }
 
         .rectangle .block {
-            background-color: crimson; margin:0;
+            background-color: crimson;
+            margin: 0;
         }
-        .strocked.block {width:calc(25vw - 16px);}
+
+        .strocked.block {
+            width: calc(25vw - 16px);
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container"> 
+    <div class="container">
         <div class="block"></div>
         <div class="block"></div>
     </div>
