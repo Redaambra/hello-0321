@@ -9,7 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/6603c9fd94.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         table {
@@ -55,12 +56,13 @@
 </head>
 
 <body>
+<div id="error"></div>
     <div id="container">
         <div></div>
         <br>
         <br>
         <br>
-        <button onclick="naujasAuto()" class="btn btn-info btn-lg">Naujas įrašas</button>
+        <button onclick ="naujasAuto()" class="btn btn-info btn-lg">Naujas įrašas</button>
         <br>
         <br>
         <br>
@@ -96,29 +98,70 @@
     <div class="modal" id="newLine" onclick="closeConfirm()">
         <div class="content1">
             <h4>Suveskite naujus duomenis</h4>
-            <form>
+            <form action="index.php" method="POST">
                 <div class="form-group">
                     <label for="data">Data</label>
-                    <input type="date" class="form-control" id="data">
+                    <input name="date" type="date" class="form-control" id="data">
                 </div>
                 <div class="form-group">
                     <label for="text">numeris:</label>
-                    <input type="text" class="form-control" id="numeris" placeholder="ABC123">
+                    <input name="number" type="text" class="form-control" id="numeris" placeholder="ABC123">
                 </div>
                 <div class="form-group">
                     <label for="atstumas">Atstumas:</label>
-                    <input type="number" class="form-control" id="atstumas" placeholder="metrai">
+                    <input name="distance" type="number" class="form-control" id="atstumas" placeholder="metrai">
                 </div>
                 <div class="form-group">
                     <label for="laikas">Laikas:</label>
-                    <input type="number" class="form-control" id="laikas" placeholder="sekundės">
+                    <input name="time" type="number" class="form-control" id="laikas" placeholder="sekundės">
                 </div>
-                <button id="taisyti-ok" class="btn btn-default">Įrašyti</button>
+                <label>
+                        <input name="id" type="" value="<?= $row['id'] ?>"required><br>
+                </label>    
+                <input type="submit" class="btn btn-default" name="save" value="Issaugoti">
                 <button class="btn btn-default">Atšaukti</button>
             </form>
         </div>
     </div>
 
+
+<?php
+        $servername = 'localhost';
+        $dbname = 'Auto';
+        $username = 'Auto';
+        $password = 'LabaiSlaptas123';
+        
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn->connect_error) {
+            die('Nepavyko prisjungti: ' . $conn->connect_error);
+        }
+        
+        $row = [];
+        
+        if (isset($_GET['edit'])){
+            $sql = "SELECT * FROM radars WHERE id =".$_GET['edit'];
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+            }
+        }
+        
+        if (isset($_POST['save'])) {
+            if ($_POST['id'] > 0) {
+                $sql = "UPDATE radars SET `number` = ?, `date` = ?, `distance` = ?, `time` = ? WHERE id = ?"; 
+                $stmts = $conn->prepare($sql);
+                $stmts->bind_param("ssddi", $_POST['number'], $_POST['date'], $_POST['distance'], $_POST['time'], $_POST['id']);
+                $stmts->execute(); 
+            } else {
+                $insert = "INSERT INTO radars(`number`, `date`, `distance`, `time`) VALUES(?, ?, ?, ?)"; 
+                $stmt = $conn->prepare($insert);
+                $stmt->bind_param("ssdd", $_POST['number'], $_POST['date'], $_POST['distance'], $_POST['time']);
+                $stmt->execute();
+            }
+        }
+        ?> 
 
 
     <script>
@@ -132,11 +175,11 @@
                 if (resp.success) {
                     rodytilentele(resp.data);
                 } else {
-                    $('div').text('kazkokia gauti lentele klaida');
+                    $('#error').text('kazkokia gauti lentele klaida');
                 }
             });
             fail(function () {
-                $('div').text('kazkokia rimta klaida');
+                $('#error').text('kazkokia rimta klaida');
             });
         }
 
@@ -201,9 +244,30 @@
         function naujasAuto() {
             document.getElementById("newLine").style.visibility = 'visible';
             document.getElementById('container').style.filter = 'blur(2px)';
+        };
 
-        }
+        function naujasAuto2(){
+            $.get('kuku.php', {
+                $data: $('input[name="data"]').val(),
+                $numeris: $('input[name="numeris"]').val(),
+                $kelias: $('input[name="kelias"]').val(),
+                $laikas: $('input[name="laikas"]').val()
+            }), function (resp) {
+                    if (resp.success) {
+                        gautiLentele();
+                    } else {
+                        $('#error').text('klaida ikelimo metu');
+                    }
+                };
+        };
+        
     </script>
+
+    
+    <footer>
+            Kaunas, &copy; <?php echo date("Y-M-D");?>
+            
+    </footer>
 </body>
 
 </html>

@@ -19,22 +19,22 @@ if ($conn->connect_errno) {
     exit;
 }
 
-$data = '2017-07-18 15:17:25';
-$numeris = '000000';
-$kelias = 5000;
-$laikas = 99;
+$data = $_REQUEST['date'];
+$numeris = $_REQUEST['number'];
+$kelias = $_REQUEST['distance'];
+$laikas = $_REQUEST['time'];
 
 // Suformuojame INSERT užklausą
-$sql = "INSERT INTO `radars`(`date`, `number`, `distance`, `time`) VALUES(?, ?, ?, ?)"; 
-//$stmt = $conn->prepare($sql);
+$insert = "INSERT INTO `radars` (`id`, `date`, `number`, `distance`, `time`) VALUES (NULL, ?, ?, ?, ?);"; 
+$stmt = $conn->prepare($insert);
 
-if (!($stmt = $conn->prepare($sql))) {
+/* if (!($stmt = $conn->prepare($sql))) {
     echo json_encode([
         success => false,
         error => $conn->error
     ]);
     exit;
-};
+}; */
 
 // Priskiriame parametrų reikšmes
 $stmt->bind_param("ssdd", $data, $numeris, $kelias, $laikas);
