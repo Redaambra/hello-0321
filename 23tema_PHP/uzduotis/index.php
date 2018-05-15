@@ -95,7 +95,7 @@
     </div>
 
     <!-- modalinis ivesti nauja eilute -->
-    <div class="modal" id="newLine" onclick="closeConfirm()">
+    <div class="modal" id="newLine">
         <div class="content1">
             <h4>Suveskite naujus duomenis</h4>
             <form action="index.php" method="POST">
@@ -116,7 +116,7 @@
                     <input name="time" type="number" class="form-control" id="laikas" placeholder="sekundės">
                 </div>
                 <label>
-                        <input name="id" type="" value="<?= $row['id'] ?>"required><br>
+                        <input name="id" type="hidden" value="<?= $row['id'] ?>"required><br>
                 </label>    
                 <input type="submit" class="btn btn-default" name="save" value="Issaugoti">
                 <button class="btn btn-default">Atšaukti</button>
@@ -124,6 +124,37 @@
         </div>
     </div>
 
+
+
+    <!-- modalinis taisyti eilute -->
+    <div class="modal" id="secondLine">
+        <div class="content1">
+            <h4>Pataisykite duomenis</h4>
+            <form action="taisyti.php" method="GET">
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input name="date" type="date" class="form-control" id="data1">
+                </div>
+                <div class="form-group">
+                    <label for="text">numeris:</label>
+                    <input name="number" type="text" class="form-control" id="numeris1" placeholder="ABC123">
+                </div>
+                <div class="form-group">
+                    <label for="atstumas">Atstumas:</label>
+                    <input name="distance" type="number" class="form-control" id="atstumas1" placeholder="metrai">
+                </div>
+                <div class="form-group">
+                    <label for="laikas">Laikas:</label>
+                    <input name="time" type="number" class="form-control" id="laikas1" placeholder="sekundės">
+                </div>
+                <label>
+                        <input name="id" type="hidden" value="<?= $row['id'] ?>"required><br>
+                </label>    
+                <input type="submit" class="btn btn-default" name="edit" value="Išsaugoti">
+                <button class="btn btn-default">Atšaukti</button>
+            </form>
+        </div>
+    </div>
 
 <?php
         $servername = 'localhost';
@@ -135,7 +166,7 @@
         $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) {
-            die('Nepavyko prisjungti: ' . $conn->connect_error);
+            die('Nepavyko prisijungti: ' . $conn->connect_error);
         }
         
         $row = [];
@@ -226,10 +257,18 @@
         }
 
         function taisyti(autoId) {
-            document.getElementById("newLine").style.visibility = 'visible';
+            document.getElementById("secondLine").style.visibility = 'visible';
             document.getElementById('container').style.filter = 'blur(2px)';
 
-        /*     document.getElementById('taisyti-ok').onclick = function () {
+            function taisyti(autoId) {
+    editRow = index;
+    var a = m[index];
+    document.getElementById("data2").value = a.data,
+    document.getElementById("numeris2").value = a.numeris,
+    document.getElementById("atstumas2").value = a.atstumas,
+    document.getElementById("laikas2").value = a.laikas;
+
+      /*      document.getElementById('confirm-ok').onclick = function () {
                 $.get('taisyti.php', { id: autoId }, function (resp) {
                     if (resp.success) {
                         gautiLentele();
@@ -237,29 +276,10 @@
                         $('div').text('klaida trynimo metu');
                     }
                 });
-            } */
+            } */ 
 
         }
 
-        function naujasAuto() {
-            document.getElementById("newLine").style.visibility = 'visible';
-            document.getElementById('container').style.filter = 'blur(2px)';
-        };
-
-        function naujasAuto2(){
-            $.get('kuku.php', {
-                $data: $('input[name="data"]').val(),
-                $numeris: $('input[name="numeris"]').val(),
-                $kelias: $('input[name="kelias"]').val(),
-                $laikas: $('input[name="laikas"]').val()
-            }), function (resp) {
-                    if (resp.success) {
-                        gautiLentele();
-                    } else {
-                        $('#error').text('klaida ikelimo metu');
-                    }
-                };
-        };
         
     </script>
 
