@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lenta</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #lenta {
+            margin: auto 0;
+            padding:0;
+            border:0;
+            font-size: 0;
+        }
+
+            .langelis {
+            width: 64px;
+            height: 64px;
+            background-color: white;
+            border:1px solid black;
+            margin: 0px;
+            display: inline-block;
+            }
+            .eilute.odd .langelis.odd {background-color: black      
+            }
+            .eilute.even .langelis.even {background-color: black}
+            
+            .eilute {margin:0;}
+            </style>
+</head>
+<body>
+        <div id="lenta"></div>
+        <script>
+        var game = {
+        boardParams: {
+        width: 8,
+        height: 8
+        },
+        
+        figures: [
+        { type: "Q", pos: "A1" },
+        { type: "Q", pos: "A2" },
+        { type: "Q", pos: "A3" },
+        { type: "Q", pos: "E2" },
+        ],
+        
+        collisions: [
+        [ "A1", "A2", "A3" ],
+        [ "A2", "E2" ],
+        ]
+        };
+        
+        /* var myJSON = JSON.stringify(game); */
+        
+        function elm(name) {
+        return document.getElementById(name);
+        }
+        function newElem(name) {
+        return document.createElement(name);
+        }
+        
+        const lenta = document.getElementById('lenta');
+        
+        for ( let y = 1; y <= game.boardParams.height; y++ ) {
+        //piesiu eilute nr. y
+        let eilute = newElem("div");
+        lenta.appendChild(eilute);
+        eilute.classList.add(
+        y % 2 ? "odd" : "even" //lyginis nelyginis
+        );
+        eilute.classList.add(
+        "eilute" //lyginis nelyginis
+        );
+        for ( let x = 1; x <= game.boardParams.width; x++ ) {
+        //piesiu eilute nr. X
+        let langelis = newElem("div");
+        eilute.appendChild(langelis);
+        langelis.classList.add(
+        x % 2 ? "odd" : "even" //lyginis nelyginis
+        );
+        langelis.classList.add(
+        "langelis");
+        langelis.classList.add(
+        String.fromCharCode(y + "A".charCodeAt(0)-1) + x //lyginis nelyginis
+        );
+        }
+        }
+
+
+        for( let i=0; i < game.figures.length; i++ ){
+            let figure = game.figures[i];
+
+
+        }
+        </script>
+</body>
+</html>

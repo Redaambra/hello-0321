@@ -4505,7 +4505,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #777;
+  color: #000;
 }
 .navbar-default .navbar-nav > li > a {
   color: #777;
@@ -6753,5 +6753,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+#main-navigation .collapse .navbar-collapse .navbar-ex1-collapse {
+  border: none !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */

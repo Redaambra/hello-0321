@@ -101,10 +101,12 @@ body {
 }
 
 a {
+  
   color: #000000;
 }
 
 a:hover {
+  background-color: blueviolet;
   color: #f14f1d;
   text-decoration: none;
   cursor: pointer;
@@ -369,7 +371,7 @@ p.wp-caption-text {
 /* ----------------------------------------- */
 
 header {
-  background: #dcdcdc;
+  background: #ffffff;
 }
 
 footer {

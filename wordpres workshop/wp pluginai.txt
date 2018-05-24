@@ -1,0 +1,13 @@
+Contact form 7
+Custom post type order and taxonomy order
+Revolution slider
+Wordfence
+Total Cache
+Lightbox by Dfactory
+Yoast SEO
+Force Regenerate Thumbnails
+Under Construction
+
+Toolset types
+WPML
+Loco translate
