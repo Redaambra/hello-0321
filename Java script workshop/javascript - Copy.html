@@ -12,16 +12,15 @@
             padding:0;
             border:0;
             line-height: 0;
-                                
+           
+          
         }
 
             .langelis {
-            display: flex;
-            text-align: center;
-            vertical-align: middle;
+                display: flex;
+                justify-items: center;
             line-height: 2;
             font-weight: 800;
-            font-size: 2em;
             overflow: auto;
             width: 64px;
             height: 64px;
@@ -38,7 +37,10 @@
             </style>
 </head>
 <body>
-        <div id="lenta"></div>
+     
+    <div id="lenta"></div>
+   
+        
         <script>
         var game = {
         boardParams: {
@@ -48,9 +50,9 @@
         
         figures: [
         { type: "&#9819", pos: "A1" },
-        { type: "&#9819", pos: "A2" },
-        { type: "&#9819", pos: "A3" },
-        { type: "&#9819", pos: "E2" },
+        { type: "Q", pos: "A2" },
+        { type: "Q", pos: "A3" },
+        { type: "Q", pos: "E2" },
         ],
         
         collisions: [
@@ -58,8 +60,6 @@
         [ "A2", "E2" ],
         ]
         };
-
-    
         
         /* var myJSON = JSON.stringify(game); */
         
@@ -97,7 +97,6 @@
         }
         }
         //simbolis is ASCII
-        
 
 
        
@@ -105,62 +104,19 @@
         for( let i=0; i < game.figures.length; i++ ){
             let l = document.getElementsByClassName("langelis" + game.figures[i].pos);
             console.log(l);
-
             for (let j=0; j < l.length; j++){
                 l[j].innerHTML = game.figures[i].type;
             }
                    }
 
             function sortByX() {
-            return (pos[1].charCodeAt(0) - pos2.charCodeAt(0));
-            console.log(sortByX);
+            return (pos1.charCodeAt(0) - pos2.charCodeAt(0));
+            console.log(pos1.charCodeAt(0));
         } 
 
+        sortByX()
+        function sortByY()
 
-
-       let board = [];
-       board.height = game.boardParams.height;
-       board.width = game.boardParams.width;
-        for (let i = 0; i < game.boardParams.height; i++){
-            board[i]=[];
-           }
-
-    function putQueen(board, x, y) {
-        if (board[y][x]){
-            console.error("Langelis uzimtas")
-        }
-        if (board.height <= y || board.width <= x || x < 0 || y < 0){
-            console.error("tikrinu")            
-        }
-        for (let i=0; i < board.width; i++){
-            board[y][i] = true; }
-
-        for (let i=0; i < board.height; i++){
-            board[x][i] = true; }
-        let dy = y -x;
-        for (let i=0; dy >= 0 && i < board.width && i+dy <board.height; i++){
-            board[i+dy][i] = true;
-        }
-        for (let i=0; dy <= 0 && i-dy < board.width && i < board.height; i++){
-            board[i][i-dy] = true;
-        }
-    }
-
-
-   function test0_0(){
-       putQueen(board,0,0);
-       assert(board[0][0]);
-       /* assert(board[0][0]) */;
-   }
-   function assert(c) {
-       if(c) console.error("Klaida nenormali!")
-       else console.error("Puiku")
-   }
-    
-
-
-         // undefined || false;
-      
 
         </script>
 </body>
